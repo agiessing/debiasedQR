@@ -1,0 +1,14 @@
+Package: debiasedQR
+Type: Package
+Title: Debiased inference on L1-penalized high-dimensional linear quantile regression models
+Version: 0.1.0
+Author: c(person("Alexander", "Giessing", role = c("aut", "cre"),
+                     email = "giessing@umich.edu",
+                     comment = c(ORCID = "0000-0002-6917-0652")),
+Maintainer: Alexander Giessing <giessing@umich.edu>
+Description: A statistically efficient debiasing procedure for L1-penalized high-dimensional sparse linear quantile regression models. Giessing, A. and Wang, J. (2023). Debiased inference on heterogeneous quantile treatment effects with regression rank-scores. *Journal of the Royal Statistical Society Series B: Statistical Methodology*, 85(5): 1561–1588.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Imports: stats, MASS, quantreg, CVXR, caret, doParallel, foreach
+RoxygenNote: 7.2.3

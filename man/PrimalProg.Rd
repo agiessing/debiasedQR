@@ -1,0 +1,47 @@
+\name{primal}
+\alias{primal}
+%- Also NEED an '\alias' for EACH other topic documented here.
+\title{
+  Primal debiasing program
+}
+\description{
+  Solves primal debiasing program using CVXR.
+}
+\usage{
+primal(X, x, Psi, gamma, quiet = TRUE)
+}
+%- maybe also 'usage' for other objects documented here.
+\arguments{
+  \item{X}{Covariates.
+}
+  \item{x}{Querry point at which to evaluate the conditional quantile function of Y given X = x.
+}
+  \item{Psi}{Estimate of the density matrix.
+}
+  \item{gamma}{Tuning parameter for primal debiasing program.
+}
+  \item{quiet}{
+  If quiet = TRUE, then no messages will be displayed.
+}
+}
+
+\value{
+Value of the primal objective function. Returns NA if the program is infeasible.
+}
+\references{
+  Giessing, A. and Wang, J. (2023). Debiased inference on heterogeneous quantile treatment effects with regression rank-scores. \emph{Journal of the Royal Statistical Society: Series B (Statistical Methodology)}, 85(5): 1561–1588. \url{https://doi.org/10.1093/jrsssb/qkad075}
+}
+
+\author{
+  Alexander Giessing, \email{giessing@umich.edu}
+}
+
+% Add one or more standard keywords, see file 'KEYWORDS' in the
+% R documentation directory (show via RShowDoc("KEYWORDS")):
+% \keyword{ ~kwd1 }
+% \keyword{ ~kwd2 }
+% Use only one keyword per line.
+% For non-standard keywords, use \concept instead of \keyword:
+\concept{Primal debiasing program}
+\concept{CVXR}
+% Use only one concept per line.
