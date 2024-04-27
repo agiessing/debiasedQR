@@ -10,6 +10,15 @@
 #'                procedure. If robust = FALSE, then mean and standard deviation
 #'                are used.
 #'
+#' @value pilot   Pilot estimate of the conditional quantile function based on
+#'                L1-penalized quantile regression vector.
+#' @value debias  Debiased estimate of the conditional quantile function based on
+#'                primal variable "\eqn{w}".
+#' @value dual    Debiased estimate of the conditional quantile function based on
+#'                dual variable "\eqn{v}".
+#' @value avar    Estimate of the asymptotic variance of either debiased estimate
+#'                of the conditional quantile function.
+#'
 #' @export
 
 debiasedPredict <- function(object, cv_rule= "1se", robust = FALSE) {
