@@ -1,4 +1,4 @@
-# ``debiasedQR``: Debiased Inference on $\ell_1$-Penalized High-Dimensional Linear Quantile Regression Models via Regression Rank-Scores
+# ``debiasedQR``
 
 Debiasing procedure for $\ell_1$-penalized high-dimensional linear quantile regression models via regression rank-scores, as proposed by Giessing and Wang (2023).
 
