@@ -47,7 +47,7 @@ s_beta <- 5
 beta_0 <- rep(0, d)
 beta_0[1:s_beta] <- 1/sqrt(s_beta)
 
-## Design matrix
+## Data generating process
 X <-  mvrnorm(n, mu = rep(0, d), Sigma)
 eps <- sig * rnorm(n, 0, 1)
 Y <- drop(X %*% beta_0) + eps
