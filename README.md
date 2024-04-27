@@ -95,7 +95,7 @@ dqr1$dual   # debiased estimate (based on dual variable v)
 dqr1$pilot  # biased pilot estimate (based on L1-penalized QR estimate)
 dqr1$avar   # estimate of the asymptotic variance of the debiased estimate
 
-## Debiased quantile function，tuning parameter gamma selected by cross-validation
+## Debiased quantile function，tuning parameter gamma selected via cross-validation
 ## (single CPU)
 fit2 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
               max_iter = 1000, parallel = FALSE)
@@ -106,7 +106,7 @@ dqr2$dual   # debiased estimate (based on dual variable v)
 dqr2$pilot  # biased pilot estimate (based on L1-penalized QR estimate)
 dqr2$avar   # estimate of the asymptotic variance of the debiased estimate
 
-## Debiased quantile function, tuning parameter selected by cross-validation
+## Debiased quantile function, tuning parameter selected via cross-validation
 ## (multiple CPUs, parallelized cross-validation)
 
 library(doParallel)
