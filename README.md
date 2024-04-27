@@ -82,7 +82,7 @@ dqr3$dual   # debiased estimate (based on dual variables)
 dqr3$pilot  # biased pilot estimate (based on L1-penalized QR)
 dqr3$avar   # estimate of asymptotic variance of debiased estimate
 
-## 95% confidence intervals for q_0 at querry point x
+## Asymptotic 95% confidence intervals for q_0 at querry point x
 cat("The 95% confidence interval for q_0 is [",
     dqr3$debias - sqrt(dqr3$avar) / sqrt(n) * qnorm(1-0.05/2), ", ",
     dqr3$debias + sqrt(dqr3$avar) / sqrt(n) * qnorm(1-0.05/2), "].\n", sep = "")
