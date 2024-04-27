@@ -16,7 +16,7 @@ The R package has three major functions:
 
 - ``drq()`` Solves the primal and dual rank-score debiasing programs for a given tuning parameter $\gamma > 0$, provided that the primal problem is feasible and that strong duality holds.
 - ``drqcv()`` Solves primal and dual rank-score debiasing programs via cross-validation and returns the values of the optimal cross-validated dual losses, which can be used to determine the optimal tuning parameter $\gamma > 0$.
-- ``debiasedPredict()``
+- ``debiasedPredict()`` Wrapper function which takes either .drq or .drqc objects from above above to functions and returns two debiased estimates of the conditional quantile function (one based on the primal variable, another based on the dual variable), the biased $\ell_1$-penalized pilot estimate of the conditional quantile function, and an estimate of the asymptotic variance of the debiased estimate. If the estimates based on primal and dual diffe, strong duality may not hold and the asymptotic guarantees of Giessing and Wang (2023) may not apply. If this happens we suggest to increase the maximum number of iterations of the algorithms.
 
 
 Below code illustrates how to use these functions.
