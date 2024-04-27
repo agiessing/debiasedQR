@@ -1,6 +1,12 @@
 # ``debiasedQR``: Debiased Inference on $\ell_1$-Penalized High-Dimensional Linear Quantile Regression Models via Regression Rank-Scores
 
-This R package 
+Debiasing procedure for $\ell_1$-penalized high-dimensional linear quantile regression models via regression rank-scores, as proposed by Giessing and Wang (2023).
+
+To install a development version of this package in R, run the following command:
+
+```R
+devtools::install_github("agiessing/debiasedQR")
+```
 
 
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/Debias-Infer.svg)](https://pypi.python.org/pypi/Debias-Infer/)
