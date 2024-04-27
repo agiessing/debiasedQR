@@ -13,7 +13,7 @@ devtools::install_github("agiessing/debiasedQR")
 ```
 
 ## Illustrative Toy Example
-
+```R
 library(MASS)
 library(quantreg)
 library(CVXR)
@@ -87,5 +87,5 @@ dqr3$avar   # estimate of asymptotic variance of debiased estimate
 cat("The 95% confidence interval for q_0 is [",
     dqr3$debias - sqrt(dqr3$avar) / sqrt(n) * qnorm(1-0.05/2), ", ",
     dqr3$debias + sqrt(dqr3$avar) / sqrt(n) * qnorm(1-0.05/2), "].\n", sep = "")
-
+```
 
