@@ -1,4 +1,4 @@
-# ``debiasedQR``: Debiased Inference on $\ell_1$-Penalized Linear Quantile Regression Models
+# ``debiasedQR``: Debiased Inference on $\ell_1$-Penalized Linear Quantile Regression Models via Regression Rank-Scores
 
 This R package 
 
