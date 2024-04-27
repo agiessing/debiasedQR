@@ -2,10 +2,11 @@
 
 Debiasing procedure for $\ell_1$-penalized high-dimensional linear quantile regression models via regression rank-scores, as proposed by Giessing and Wang (2023).
 
-To install a development version of this package in R, run the following command:
+To install a development version of this package in R, run the following commands:
 
 ```R
-devtools::install_github("agiessing/debiasedQR")
+library(devtools)
+install_github("agiessing/debiasedQR")
 ```
 
 
