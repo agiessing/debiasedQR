@@ -1,3 +1,19 @@
+#' Coordinate Descent Algorithm based on the proximal gradient method to solve
+#' the (Generic) Dual Debiasing Program
+#'
+#' @param X        Covariates.
+#' @param x        Querry point at which to evaluate the conditional quantile
+#'                 function of Y given X = x.
+#' @param Psi      Estimate of the density matrix.
+#' @param v_init   Initialized value of the solution to the dual debiasing program.
+#' @param gamma    Tuning parameter for primal debiasing program.
+#' @param eps      Tolerance levels to determine convergence of the CD algorithm.
+#'                 Default value is 1e-06.
+#' @param max_iter Maximum number of iterations tge ADMM algorithm. Default value
+#'                 is 500.
+#'
+#' @value v        Solution to the dual debiasing program.
+#'
 #' @export
 
 dualCD <- function(X, x, Psi=NULL, v_init=NULL, gamma=0.05, eps=1e-6, max_iter=5000) {
