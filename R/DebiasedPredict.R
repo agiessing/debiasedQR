@@ -3,11 +3,12 @@
 #'
 #' @param object An .drq or .drqcv object obtained from drq() or drqcv().
 #' @param cv_rule Cross-validation rule to be applied to .drqcv object to select
-#' optimal tuning parameter "\eqn{gamma >0}". Options are `1se', `mincv', and
-#' `minfeas'. For details see documentatio of optGamma().
-#' @param robust  Only relevant for .drqcv objects. If robust = TRUE, then median
-#' and mean absolute deviation are used in cross-validation procedure.If robust
-#' = FALSE, then mean and standard deviation are used.
+#'                optimal tuning parameter "\eqn{gamma >0}". Options are `1se',
+#'                `mincv', and `minfeas'. For details see documentatio of optGamma().
+#' @param robust Only relevant for .drqcv objects. If robust = TRUE, then median
+#'               and mean absolute deviation are used in cross-validation
+#'               procedure. If robust = FALSE, then mean and standard deviation
+#'               are used.
 #'
 #' @export
 
