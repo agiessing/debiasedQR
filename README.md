@@ -14,7 +14,7 @@ This package currently offers two algorithmic options: Alternating Direction of 
 ## Example Usage
 The R package has three major functions: 
 
-- drq()
+- \texttt{drq()}
 - drqcv()
 - debiasedPredict(). 
 
