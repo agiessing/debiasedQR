@@ -1,3 +1,20 @@
+#' ADMM algorithm to solve the (Generic) Dual Debiasing Program
+#'
+#' @param X        Covariates.
+#' @param x        Querry point at which to evaluate the conditional quantile
+#'                 function of Y given X = x.
+#' @param Psi      Estimate of the density matrix.
+#' @param v_init   Initialized value of the solution to the dual debiasing program.
+#' @param gamma    Tuning parameter for primal debiasing program.
+#' @param rho      Step size of ADMM algorithm.
+#' @param max_iter Maximum number of iterations tge ADMM algorithm. Default value
+#'                 is 500.
+#' @param tol      Tolerance levels to determine convergence of the ADMM algorithm.
+#'                 Default value is c(1e-6, 1e-6).
+#' @param quiet    If quiet = TRUE, then no messages are displayed.
+#'
+#' @value v        Solution to the dual debiasing program.
+#'
 #' @export
 
 dualADMM <- function(X, x, Psi=NULL, v_init=NULL, gamma = 0.2, rho=5, max_iter = 500, tol = c(1e-6, 1e-6), quiet = TRUE) {
