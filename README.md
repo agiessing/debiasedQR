@@ -8,6 +8,13 @@ To install a development version of this package in R, run the following command
 library(devtools)
 install_github("agiessing/debiasedQR")
 ```
+This package currently offers two algorithmic options: Alternating Direction of Multiplier Method (ADMM) and Coordinate Descent (CD). THe simualtion study and data analysis in the paper Giessing and Wang (2023) were conducted using the ADMM algorithm. We found that the newly implemented CD algorithm converges substantially faster, is more accurate, and also more robust whne applied to extreme quantiles. We therefore recommend to only use the default setting with the CD algorithm.
+
+
+
+
+
+optimizers: mosek, pogs, and quadprog. Mosek is a commercial interior point solver, pogs is a first-order optimizer, based on ADMM, while quadprog is a standard R optimization library. In general, we achieved best performance with mosek, and recommend trying optimizers in the order listed above. We found pogs to be somewhat slower than mosek on the problems we tried. (Note that we offer two solution strategies based on pogs: pogs and pogs.dual. We usually recommend the former, except when p is much larger than n.) Finally, quadprog performors well on small problems, but can be much slower for larger problems.
 
 
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/Debias-Infer.svg)](https://pypi.python.org/pypi/Debias-Infer/)
