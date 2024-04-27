@@ -106,7 +106,7 @@ dqr2$pilot  # biased pilot estimate (based on L1-penalized QR)
 dqr2$avar   # estimate of asymptotic variance of debiased estimate
 
 ## Debiased quantile function, tuning parameter selected by cross-validation
-## (multiple CPUs, substantially faster than single CPU)
+## (multiple CPUs, parallelized cross-validation)
 
 library(doParallel)
 
