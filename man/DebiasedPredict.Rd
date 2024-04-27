@@ -2,12 +2,15 @@
 \alias{debiasedPredict}
 
 \title{
-Summary function for .drq and .drqcv objects}
+Summary function for .drq and .drqcv objects
+}
 
 \description{
-Returns the debiased estimate of the conditional quantile of Y given X = x, where x is a pre-specified querry point, and an estimate of the asymptotic variance of the debaised estimator.}
+Returns the debiased estimate of the conditional quantile of Y given X = x, where x is a pre-specified querry point, and an estimate of the asymptotic variance of the debaised estimator.
+}
 
-\usage{debiasedPredict(object, cv_rule = "1se", robust = FALSE)}
+\usage{debiasedPredict(object, cv_rule = "1se", robust = FALSE)
+}
 
 \arguments{
   \item{object}{An .drq or .drqcv object obtained from drq() or drqcv().}
@@ -103,20 +106,8 @@ fit2 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
               max_iter = 1000, parallel = TRUE)
 dQR2 <- debiasedPredict(fit2, cv_rule = "1se", robust=FALSE)
 stopCluster(cl)
-
-
-
-
 }
 
-
-
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
- \keyword{Utilities}
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
+\keyword{Utilities}
 \concept{Debiased prediction}
 \concept{Debiased estimator}
-% Use only one concept per line.
