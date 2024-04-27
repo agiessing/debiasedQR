@@ -1,3 +1,21 @@
+#' This function finds the optimal tuning paramter gamma from a list of cross-
+#' valdiated dual losses.
+#'
+#' @param dual_loss   List of values of the cross-validated dual objective function.
+#' @param gamma_lst   List of tuning parameters "\eqn{\gamma > 0}" for the primal
+#'                    debiasing program from which to choose the optimal value.
+#' @param cv_fold     Cross-validation rule to be applied to .drqcv object to
+#'                    select optimal tuning parameter "\eqn{gamma >0}".
+#'                    Default value is 5.
+#' @param cv_rule     Cross-validation rule to be applied to .drqcv object to
+#'                    select optimal tuning parameter "\eqn{gamma >0}". Choices
+#'                    are `1se', `mincv', and `minfeas'.
+#' @param robust      If robust = TRUE, then median and mean absolute deviation
+#'                    (instead of mean and standard deviation) are used when
+#'                    finding the optimal tuning parameter.
+#' @return gamma_opt  Optimal tuning parameter "\eqn{\gamma > 0}" of the primal
+#'                    problem chosen via cross-validation
+
 #' @export
 
 optGamma <- function(dual_loss, gamma_lst, cv_fold, cv_rule, robust = TRUE) {

@@ -32,7 +32,7 @@ optGamma(dual_loss, gamma_lst, cv_fold, cv_rule, robust = TRUE)
 }
 
 \value{
-Optimal tuning parameter "\eqn{\gamma > 0}" of the primal problem chosen via cross-valdiation or simply the provided value.
+Optimal tuning parameter "\eqn{\gamma > 0}" of the primal problem chosen via cross-validation.
 }
 
 \references{

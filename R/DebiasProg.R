@@ -2,36 +2,36 @@
 #' debiasedPredict() to compute the rank-score debiased estimate of the
 #' conditional quantile function at querry point x.
 #'
-#' @param Y         Responses.
-#' @param X         Covariates.
-#' @param x         Querry point at which to evaluate the conditional quantile
-#'                  function of Y given X = x.
-#' @param tau       Quantile level "\eqn{\tau \in (0,1)}".
-#' @param density   Options for estimating the density matrix: "nid" (non-iid data),
-#'                  "iid" (iid data), and "iidGaussian" (iid Gaussian data).
-#' @param sparsity  Only relevant if screening = TRUE. Upper bound on sparsity of
-#'                  the quantile regression function. Default value NULL.
-#' @param lambda    Regularization parameter for L1-penalized quantile regression
-#'                  problem.
-#' @param gamma     Tuning parameter for primal debiasing program.
-#' @param max_iter  Maximum number of iterations of the coordinate descent
-#'                  algorithm or alternating direction of multiplier method.
-#'                  Default value is 500.
-#' @param algo      Algorithm for solving the dual program. Options are "CD"
-#'                  (coordinate descent) and "ADMM" (alternating direction of
-#'                  multiplier method).
+#' @param Y          Responses.
+#' @param X          Covariates.
+#' @param x          Querry point at which to evaluate the conditional quantile
+#'                   function of Y given X = x.
+#' @param tau        Quantile level "\eqn{\tau \in (0,1)}".
+#' @param density    Options for estimating the density matrix: "nid" (non-iid data),
+#'                   "iid" (iid data), and "iidGaussian" (iid Gaussian data).
+#' @param sparsity   Only relevant if screening = TRUE. Upper bound on sparsity of
+#'                   the quantile regression function. Default value NULL.
+#' @param lambda     Regularization parameter for L1-penalized quantile regression
+#'                   problem.
+#' @param gamma      Tuning parameter for primal debiasing program.
+#' @param max_iter   Maximum number of iterations of the coordinate descent
+#'                   algorithm or alternating direction of multiplier method.
+#'                   Default value is 500.
+#' @param algo       Algorithm for solving the dual program. Options are "CD"
+#'                   (coordinate descent) and "ADMM" (alternating direction of
+#'                   multiplier method).
 #'
-#' @value w         Solution to the primal debiasing program.
-#' @value v         Solution to the dual debiasing program.
-#' @value psi       Density matrix, i.e. diagonal matrix with conditional densities
-#'                  of Y given X evaluated at the conditional quantile of Y given
-#'                  X = X_i i.e. "\eqn{f_{Y \mid X}(X_i'\beta_0 \mid X_i)}" for
-#'                  "\eqn{i = 1, \ldots, n}".
-#' @value pilot     Pilot estimate based on L1-penalized quantile regression vector
-#'                  and querry point x.
-#' @value residuals Residuals of L1-penalized quantile regression program.
-#' @value gradL     Gradient of the check loss with respect to the quantile
-#'                  function, a.k.a. rank scores.
+#' @return w         Solution to the primal debiasing program.
+#' @return v         Solution to the dual debiasing program.
+#' @return psi       Density matrix, i.e. diagonal matrix with conditional densities
+#'                   of Y given X evaluated at the conditional quantile of Y given
+#'                   X = X_i i.e. "\eqn{f_{Y \mid X}(X_i'\beta_0 \mid X_i)}" for
+#'                   "\eqn{i = 1, \ldots, n}".
+#' @return pilot     Pilot estimate based on L1-penalized quantile regression vector
+#'                   and querry point x.
+#' @return residuals Residuals of L1-penalized quantile regression program.
+#' @return gradL     Gradient of the check loss with respect to the quantile
+#'                   function, a.k.a. rank scores.
 #'
 #' @import quantreg
 #' @export

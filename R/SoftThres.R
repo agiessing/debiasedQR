@@ -1,3 +1,5 @@
+#' Soft Thresholding Operator
+#'
 #' @export
 
 SoftThres <- function(theta, lambda) {

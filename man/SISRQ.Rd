@@ -6,11 +6,11 @@
 }
 
 \description{
-  Iterative sure indendence screening for linear quantile regression to improve and robustify the estiamtion of the density matrix.
+  Iterative sure indendence screening for linear quantile regression to improve and robustify the estimation of the density matrix.
 }
 
 \usage{
-sisrq(Y, X, tau, kM, max_iter = 100)
+sisrq(Y, X, tau, kM, max_iter = 100, quiet = TRUE)
 }
 
 \arguments{
@@ -22,8 +22,9 @@ sisrq(Y, X, tau, kM, max_iter = 100)
 }
   \item{kM}{Upper bound on (desired) sparsity.
 }
-  \item{max_iter}{
-Maximum number of iterations of sure independence screening. Default value is 100.
+  \item{max_iter}{Maximum number of iterations of sure independence screening. Default value is 100.
+}
+\item{quiet}{If quiet = TRUE, then no messages are displayed.
 }
 }
 

@@ -51,7 +51,7 @@ Maximum number of iterations of the coordinate descent algorithm or alternating 
 }
 \item{pilot}{Pilot estimate based on L1-penalized quantile regression vector and querry point x.
 }
-\item{residuals}{Residuals fo L1-penalized quantile regression program.
+\item{residuals}{Residuals of L1-penalized quantile regression program.
 }
 \item{gradL}{Gradient of the check loss with respect to the quantile function, a.k.a. rank scores.
 }

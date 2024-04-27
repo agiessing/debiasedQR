@@ -12,7 +12,7 @@
 #' @param max_iter Maximum number of iterations tge ADMM algorithm. Default value
 #'                 is 500.
 #'
-#' @value v        Solution to the dual debiasing program.
+#' @return v       Solution to the dual debiasing program.
 #'
 #' @export
 

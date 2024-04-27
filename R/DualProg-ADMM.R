@@ -13,7 +13,7 @@
 #'                 Default value is c(1e-6, 1e-6).
 #' @param quiet    If quiet = TRUE, then no messages are displayed.
 #'
-#' @value v        Solution to the dual debiasing program.
+#' @return v       Solution to the dual debiasing program.
 #'
 #' @export
 

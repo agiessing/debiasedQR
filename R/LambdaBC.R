@@ -1,3 +1,12 @@
+#' Tuning parameter Selection for l1-penalized QR
+#'
+#' Finds a regularization parameter for L1-penalized linear quantile regression
+#' by exploiting that the sup-norm of the gradient of the check loss is a pivot.
+#'
+#' Belloni, A. and Chernozhukov, V. (2011). L1-penalized quantile regression in
+#' high-dimensional sparse models. #' Annals of Statistics. 39 (1) 82 - 130.
+#' \url{https://doi.org/10.1214/10-AOS827}
+
 #' @import stats
 #' @export
 

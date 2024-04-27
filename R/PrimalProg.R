@@ -1,3 +1,17 @@
+#' (Generic) Primal Debiasing Program
+#'
+#' This function solves the primal debiasing program which yields MSE-optimal
+#' weights to debias (any) Lasso pilot estimate.
+#'
+#' @param X     Covariates.
+#' @param x     Querry point at which to evaluate the conditional quantile
+#'              function of Y given X = x.
+#' @param Psi   Estimate of the density matrix.
+#' @param gamma Tuning parameter for primal debiasing program.
+#' @param quiet If quiet = TRUE, then no messages are displayed.
+#'
+#' @return w    Solution to the primal debiasing program.
+#'
 #' @import MASS
 #' @rawNamespace import(CVXR, except = c(power, huber))
 #' @export

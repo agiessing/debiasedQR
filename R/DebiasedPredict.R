@@ -1,23 +1,23 @@
 #' This function takes .drq and .drqcv objects and returns the rank-score debiased
 #' estimate of the conditional quantile function and its asymptotic variance.
 #'
-#' @param object  An .drq or .drqcv object obtained from drq() or drqcv().
-#' @param cv_rule Cross-validation rule to be applied to .drqcv object to select
-#'                optimal tuning parameter "\eqn{gamma >0}". Options are `1se',
-#'                `mincv', and `minfeas'. For details see docu of optGamma().
-#' @param robust  Only relevant for .drqcv objects. If robust = TRUE, then median
-#'                and mean absolute deviation are used in cross-validation
-#'                procedure. If robust = FALSE, then mean and standard deviation
-#'                are used.
+#' @param object   An .drq or .drqcv object obtained from drq() or drqcv().
+#' @param cv_rule  Cross-validation rule to be applied to .drqcv object to select
+#'                 optimal tuning parameter "\eqn{gamma >0}". Options are `1se',
+#'                 `mincv', and `minfeas'. For details see docu of optGamma().
+#' @param robust   Only relevant for .drqcv objects. If robust = TRUE, then median
+#'                 and mean absolute deviation are used in cross-validation
+#'                 procedure. If robust = FALSE, then mean and standard deviation
+#'                 are used.
 #'
-#' @value pilot   Pilot estimate of the conditional quantile function based on
-#'                L1-penalized quantile regression vector.
-#' @value debias  Debiased estimate of the conditional quantile function based on
-#'                primal variable "\eqn{w}".
-#' @value dual    Debiased estimate of the conditional quantile function based on
-#'                dual variable "\eqn{v}".
-#' @value avar    Estimate of the asymptotic variance of either debiased estimate
-#'                of the conditional quantile function.
+#' @return pilot   Pilot estimate of the conditional quantile function based on
+#'                 L1-penalized quantile regression vector.
+#' @return debias  Debiased estimate of the conditional quantile function based
+#'                 on primal variable "\eqn{w}".
+#' @return dual    Debiased estimate of the conditional quantile function based
+#'                 on dual variable "\eqn{v}".
+#' @return avar    Estimate of the asymptotic variance of either debiased estimate
+#'                 of the conditional quantile function.
 #'
 #' @export
 

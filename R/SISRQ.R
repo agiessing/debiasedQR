@@ -1,7 +1,23 @@
+#' Iterative sure indendence screening for linear quantile regression
+#'
+#' Iterative sure indendence screening for linear quantile regression to improve
+#' and robustify the estimation of the density matrix.
+#'
+#' @param Y        Responses.
+#' @param X        Covariates.
+#' @param tau      Quantile level "\eqn{\tau \in (0,1)}".
+#' @param kM       Only relevant if screening = TRUE. Upper bound on sparsity of
+#'                 the quantile regression function. Default value NULL.
+#' @param max_iter Maximum number of iterations of sure independence screening.
+#'                 Default value is 100.
+#' @param quiet    If quiet = TRUE, then no messages are displayed.
+#'
+#' @return M       Selected model/ covariates.
+#'
 #' @import quantreg
 #' @export
 
-sisrq <- function(Y, X, tau, kM, max_iter = 100) {
+sisrq <- function(Y, X, tau, kM, max_iter = 100, quiet = TRUE) {
   n <- dim(X)[1]
   d <- dim(X)[2]
   kA=ceiling(n/log(n))
@@ -44,7 +60,9 @@ sisrq <- function(Y, X, tau, kM, max_iter = 100) {
 
     M_old <- M_new
 
-    #message(paste0(c("Selected Model: ", M_old), collapse = " "))
+    if(!quiet){
+      message(paste0(c("Selected Model: ", M_old), collapse = " "))
+    }
   }
 
   return(M_new)
