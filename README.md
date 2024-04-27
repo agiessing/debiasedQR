@@ -2,68 +2,19 @@
 
 Debiasing procedure for $\ell_1$-penalized high-dimensional linear quantile regression models via regression rank-scores, as proposed by Giessing and Wang (2023).
 
+This package currently offers two algorithmic options: Alternating Direction of Multiplier Method (ADMM) and Coordinate Descent (CD). THe simualtion study and data analysis in the paper Giessing and Wang (2023) were conducted using the ADMM algorithm. We found that the newly implemented CD algorithm converges substantially faster, is more accurate, and also more robust whne applied to extreme quantiles. We therefore recommend to only use the default setting with the CD algorithm.
+
+Installation guide
+--------
 To install a development version of this package in R, run the following commands:
 
 ```R
 library(devtools)
 install_github("agiessing/debiasedQR")
 ```
-This package currently offers two algorithmic options: Alternating Direction of Multiplier Method (ADMM) and Coordinate Descent (CD). THe simualtion study and data analysis in the paper Giessing and Wang (2023) were conducted using the ADMM algorithm. We found that the newly implemented CD algorithm converges substantially faster, is more accurate, and also more robust whne applied to extreme quantiles. We therefore recommend to only use the default setting with the CD algorithm.
 
-
-
-
-
-optimizers: mosek, pogs, and quadprog. Mosek is a commercial interior point solver, pogs is a first-order optimizer, based on ADMM, while quadprog is a standard R optimization library. In general, we achieved best performance with mosek, and recommend trying optimizers in the order listed above. We found pogs to be somewhat slower than mosek on the problems we tried. (Note that we offer two solution strategies based on pogs: pogs and pogs.dual. We usually recommend the former, except when p is much larger than n.) Finally, quadprog performors well on small problems, but can be much slower for larger problems.
-
-
-[![PyPI pyversions](https://img.shields.io/pypi/pyversions/Debias-Infer.svg)](https://pypi.python.org/pypi/Debias-Infer/)
-[![PyPI version](https://badge.fury.io/py/Debias-Infer.svg)](https://badge.fury.io/py/Debias-Infer)
-[![Downloads](https://static.pepy.tech/badge/Debias-Infer)](https://pepy.tech/project/Debias-Infer)
-[![Documentation Status](https://readthedocs.org/projects/sconce-scms/badge/?version=latest)](http://debias-infer.readthedocs.io/?badge=latest)
-
-# Efficient Inference on High-Dimensional Linear Models With Missing Outcomes
-
-This package implements the proposed debiasing method for conducting valid inference on the high-dimensional linear regression function with missing outcomes. We also document all the code for the simulations and real-world applications in our paper [here](https://github.com/zhangyk8/Debias-Infer/tree/main/Paper_Code).
-
-* Free software: MIT license
-* Python Package Documentation: [https://debias-infer.readthedocs.io](https://debias-infer.readthedocs.io).
-* You may also consider using our R package [DebiasInfer](https://cran.r-project.org/web/packages/DebiasInfer/index.html), though the Python package will be computationally faster.
-
-Installation guide
+Usage
 --------
-
-```Debias-Infer``` requires Python 3.8+ (earlier version might be applicable), [NumPy](http://www.numpy.org/), [SciPy](https://www.scipy.org/), [scikit-learn](https://scikit-learn.org/stable/), [CVXPY](https://www.cvxpy.org/), [statsmodels](https://www.statsmodels.org/). To install the latest version of ```Debias-Infer``` from this repository, run:
-
-```
-python setup.py install
-```
-
-To pip install a stable release, run:
-```
-pip install Debias-Infer
-```
-
-References
---------
-
-<a name="debias">[1]</a> Y. Zhang, A. Giessing, Y.-C. Chen (2023+) Efficient Inference on High-Dimensional Linear Models with Missing Outcomes [arXiv:2309.06429](https://arxiv.org/abs/2309.06429).
-
-<a name="scaledlasso">[2]</a> T. Sun and C.-H. Zhang (2012). Scaled Sparse Linear Regression. *Biometrika*, **99**, no.4: 879-898.
-
-
-
-
-
-## Installation
-
-The development version can be installed from github:
-
-```R
-devtools::install_github("agiessing/debiasedQR")
-```
-
-## Toy Example
 ```R
 library(MASS)
 library(CVXR)
@@ -143,4 +94,65 @@ cat("The 95% confidence interval for q_0 is [",
     dqr3$debias - sqrt(dqr3$avar) / sqrt(n) * qnorm(1-0.05/2), ", ",
     dqr3$debias + sqrt(dqr3$avar) / sqrt(n) * qnorm(1-0.05/2), "].\n", sep = "")
 ```
+
+
+
+References
+--------
+<a name="debias">[1]</a> Y. Zhang, A. Giessing, Y.-C. Chen (2023+) Efficient Inference on High-Dimensional Linear Models with Missing Outcomes [arXiv:2309.06429](https://arxiv.org/abs/2309.06429).
+
+<a name="scaledlasso">[2]</a> T. Sun and C.-H. Zhang (2012). Scaled Sparse Linear Regression. *Biometrika*, **99**, no.4: 879-898.
+
+
+optimizers: mosek, pogs, and quadprog. Mosek is a commercial interior point solver, pogs is a first-order optimizer, based on ADMM, while quadprog is a standard R optimization library. In general, we achieved best performance with mosek, and recommend trying optimizers in the order listed above. We found pogs to be somewhat slower than mosek on the problems we tried. (Note that we offer two solution strategies based on pogs: pogs and pogs.dual. We usually recommend the former, except when p is much larger than n.) Finally, quadprog performors well on small problems, but can be much slower for larger problems.
+
+
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/Debias-Infer.svg)](https://pypi.python.org/pypi/Debias-Infer/)
+[![PyPI version](https://badge.fury.io/py/Debias-Infer.svg)](https://badge.fury.io/py/Debias-Infer)
+[![Downloads](https://static.pepy.tech/badge/Debias-Infer)](https://pepy.tech/project/Debias-Infer)
+[![Documentation Status](https://readthedocs.org/projects/sconce-scms/badge/?version=latest)](http://debias-infer.readthedocs.io/?badge=latest)
+
+# Efficient Inference on High-Dimensional Linear Models With Missing Outcomes
+
+This package implements the proposed debiasing method for conducting valid inference on the high-dimensional linear regression function with missing outcomes. We also document all the code for the simulations and real-world applications in our paper [here](https://github.com/zhangyk8/Debias-Infer/tree/main/Paper_Code).
+
+* Free software: MIT license
+* Python Package Documentation: [https://debias-infer.readthedocs.io](https://debias-infer.readthedocs.io).
+* You may also consider using our R package [DebiasInfer](https://cran.r-project.org/web/packages/DebiasInfer/index.html), though the Python package will be computationally faster.
+
+Installation guide
+--------
+
+```Debias-Infer``` requires Python 3.8+ (earlier version might be applicable), [NumPy](http://www.numpy.org/), [SciPy](https://www.scipy.org/), [scikit-learn](https://scikit-learn.org/stable/), [CVXPY](https://www.cvxpy.org/), [statsmodels](https://www.statsmodels.org/). To install the latest version of ```Debias-Infer``` from this repository, run:
+
+```
+python setup.py install
+```
+
+To pip install a stable release, run:
+```
+pip install Debias-Infer
+```
+
+References
+--------
+
+<a name="debias">[1]</a> Y. Zhang, A. Giessing, Y.-C. Chen (2023+) Efficient Inference on High-Dimensional Linear Models with Missing Outcomes [arXiv:2309.06429](https://arxiv.org/abs/2309.06429).
+
+<a name="scaledlasso">[2]</a> T. Sun and C.-H. Zhang (2012). Scaled Sparse Linear Regression. *Biometrika*, **99**, no.4: 879-898.
+
+
+
+
+
+## Installation
+
+The development version can be installed from github:
+
+```R
+devtools::install_github("agiessing/debiasedQR")
+```
+
+## Toy Example
+
 
