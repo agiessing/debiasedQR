@@ -89,8 +89,8 @@ fit1 <- drq(Y, X, x, tau, density="nid", sparsity = 10,
             lambda = lambdaBC(X=X, tau=tau), gamma = 0.33)
 dqr1 <- debiasedPredict(fit1, robust=FALSE)
 
-dqr1$debias # debiased estimate (based on primal variables)
-dqr1$dual   # debiased estimate (based on dual variables)
+dqr1$debias # debiased estimate (based on primal variable w)
+dqr1$dual   # debiased estimate (based on dual variable v)
 dqr1$pilot  # biased pilot estimate (based on L1-penalized QR)
 dqr1$avar   # estimate of asymptotic variance of debiased estimate
 
@@ -100,8 +100,8 @@ fit2 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
               max_iter = 1000, parallel = FALSE)
 dqr2 <- debiasedPredict(fit2, cv_rule = "1se", robust=FALSE)
 
-dqr2$debias # debiased estimate (based on primal variables)
-dqr2$dual   # debiased estimate (based on dual variables)
+dqr2$debias # debiased estimate (based on primal variable w)
+dqr2$dual   # debiased estimate (based on dual variable v)
 dqr2$pilot  # biased pilot estimate (based on L1-penalized QR)
 dqr2$avar   # estimate of asymptotic variance of debiased estimate
 
@@ -118,8 +118,8 @@ fit3 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
 stopCluster(cl)
 dqr3 <- debiasedPredict(fit3, cv_rule = "1se", robust=FALSE)
 
-dqr3$debias # debiased estimate (based on primal variables)
-dqr3$dual   # debiased estimate (based on dual variables)
+dqr3$debias # debiased estimate (based on primal variable w)
+dqr3$dual   # debiased estimate (based on dual variable v)
 dqr3$pilot  # biased pilot estimate (based on L1-penalized QR)
 dqr3$avar   # estimate of asymptotic variance of debiased estimate
 
