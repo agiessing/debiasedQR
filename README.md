@@ -1,5 +1,6 @@
-# ``debiasedQR``: Debiased Inference on L1-Penalized High-dimensional linear quantile regression models via regression rank-scores
+# ``debiasedQR``: Debiased Inference On L1-Penalized High-Dimensional Linear Quantile Regression Models
 
+This R package 
 
 
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/Debias-Infer.svg)](https://pypi.python.org/pypi/Debias-Infer/)
