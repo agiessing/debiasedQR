@@ -1,6 +1,6 @@
 \name{dualADMM}
 \alias{dualADMM}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
   ADMM algorithm to solve the dual debiasing program
 }
@@ -11,7 +11,7 @@
 dualADMM(X, x, Psi=NULL, v_init=NULL, gamma, rho=5, max_iter = 500,
 tol = c(1e-6, 1e-6), quiet = TRUE)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{X}{Covariates.
 }
@@ -52,22 +52,5 @@ tol = c(1e-6, 1e-6), quiet = TRUE)
   Alexander Giessing, \email{giessing@umich.edu}
 }
 
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x)
-{
-  }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
-% \keyword{ ~kwd1 }
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
- \concept{Dual debiasing program}
- \concept{ADMM algorithm}
-% Use only one concept per line.
+\concept{Dual debiasing program}
+\concept{ADMM algorithm}

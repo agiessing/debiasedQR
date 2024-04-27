@@ -1,17 +1,19 @@
 \name{optGamma}
 \alias{optGamma}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
   Optimal tuning parameter
 }
+
 \description{
   Finds the optimal tuning parameter for primal and dual program from a list of
 cross-validated losses.
 }
+
 \usage{
 optGamma(dual_loss, gamma_lst, cv_fold, cv_rule, robust = TRUE)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{dual_loss}{
   List of values of the cross-validated dual objective function.
@@ -32,6 +34,7 @@ optGamma(dual_loss, gamma_lst, cv_fold, cv_rule, robust = TRUE)
 \value{
 Optimal tuning parameter "\eqn{\gamma > 0}" of the primal problem chosen via cross-valdiation or simply the provided value.
 }
+
 \references{
   Giessing, A. and Wang, J. (2023). Debiased inference on heterogeneous quantile treatment effects with regression rank-scores. \emph{Journal of the Royal Statistical Society: Series B (Statistical Methodology)}, 85(5): 1561–1588. \url{https://doi.org/10.1093/jrsssb/qkad075}
 }
@@ -39,22 +42,6 @@ Optimal tuning parameter "\eqn{\gamma > 0}" of the primal problem chosen via cro
 \author{
   Alexander Giessing, \email{giessing@umich.edu}
 }
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function (x)
-{
-  }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
 \keyword{Utilities}
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
 \concept{Optimal cross-validated tuning parameter}
-% \concept{ ~cpt2 }
-% Use only one concept per line.

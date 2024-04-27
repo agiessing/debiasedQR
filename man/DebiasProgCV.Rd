@@ -1,19 +1,18 @@
 \name{drqcv}
 \alias{drqcv}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Cross-validation procedure
 }
 \description{
-Solves primal and dual debiasing program using cross-validation and returns
-cross-validated losses (which can be used to detemine the optimal tuning
-parameter).
+Solves primal and dual debiasing program using cross-validation and returns cross-validated losses (which can be used to detemine the optimal tuning parameter).
 }
+
 \usage{
 drqcv(Y, X, x, tau, density = "nid", sparsity = NULL, cv_fold = 5, gamma_lst = NULL,
 max_iter = 500, tol = c(1e-6, 1e-6), algo ="CD", parallel=FALSE)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{Y}{Responses.
 }
@@ -46,8 +45,6 @@ Maximum number of iterations of the coordinate descent or alternating direction 
 }
 
 \value{
-%%  ~Describe the value returned
-%%  If it is a LIST, use
   \item{Y}{Returns responses.
 }
   \item{X}{Returns covariates.
@@ -72,20 +69,13 @@ Maximum number of iterations of the coordinate descent or alternating direction 
 }
 }
 
-
 \references{
   Giessing, A. and Wang, J. (2023). Debiased inference on heterogeneous quantile treatment effects with regression rank-scores. \emph{Journal of the Royal Statistical Society Series B: Statistical Methodology}, 85(5): 1561–1588. \url{https://doi.org/10.1093/jrsssb/qkad075}
 }
+
 \author{
   Alexander Giessing, \email{giessing@umich.edu}
 }
 
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
 \keyword{Utilities}
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
 \concept{Cross-validation}
-% \concept{ ~cpt2 }
-% Use only one concept per line.

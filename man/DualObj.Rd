@@ -1,16 +1,18 @@
 \name{dualObj}
 \alias{dualObj}
-%- Also NEED an '\alias' for EACH other topic documented here.
+
 \title{
 Objective function of the dual debiasing program.
 }
+
 \description{
 Returns the the objective function of the dual debiasing program.
 }
+
 \usage{
 dualObj(X, x, Psi, v, gamma)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{X}{
   Covariates.
@@ -39,22 +41,5 @@ dualObj(X, x, Psi, v, gamma)
   Alexander Giessing, \email{giessing@umich.edu}
 }
 
-\examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x)
-{
-  }
-}
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory (show via RShowDoc("KEYWORDS")):
 \keyword{Utilities}
-% \keyword{ ~kwd2 }
-% Use only one keyword per line.
-% For non-standard keywords, use \concept instead of \keyword:
- \concept{Dual objective function}
-% \concept{ ~cpt2 }
-% Use only one concept per line.
+\concept{Dual objective function}
