@@ -2,10 +2,6 @@
 
 Debiasing procedure for $\ell_1$-penalized high-dimensional linear quantile regression models via regression rank-scores, as proposed by Giessing and Wang (2023).
 
-This package currently offers two algorithmic options: Alternating Direction of Multiplier Method (ADMM) and Coordinate Descent (CD). The simulation study and data analysis in Giessing and Wang (2023) were conducted using (a version of the implemented) ADMM algorithm. We found that the newly implemented CD algorithm converges substantially faster, is more accurate, and also more robust whne applied to extreme quantiles. We therefore recommend to only use the default setting with the CD algorithm.
-
-Installation guide
---------
 We will soon make the R package available on CRAN. In the meantime, to install a development version of this package in R, run the following commands:
 
 ```R
@@ -13,7 +9,11 @@ library(devtools)
 install_github("agiessing/debiasedQR")
 ```
 
-Usage
+This package currently offers two algorithmic options: Alternating Direction of Multiplier Method (ADMM) and Coordinate Descent (CD). The simulation study and data analysis in Giessing and Wang (2023) were conducted using (a version of the implemented) ADMM algorithm. We found that the newly implemented CD algorithm converges substantially faster, is more accurate, and also more robust when applied to extreme quantiles. We therefore recommend to only use the default setting with the CD algorithm.
+
+Installation guide
+--------
+
 --------
 The R package has three major functions: drq(), drqcv(), and debiasedPredict(). 
 
