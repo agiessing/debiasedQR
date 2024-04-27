@@ -40,7 +40,8 @@
 #' @import foreach
 #' @export
 
-drqcv <- function(Y, X, x, tau, density = "nid", sparsity = NULL, cv_fold = 5, gamma_lst = NULL, max_iter = 500, tol = c(1e-6, 1e-6), algo ="CD", parallel=FALSE)  {
+drqcv <- function(Y, X, x, tau, density = "nid", sparsity = NULL, cv_fold = 5,
+                  gamma_lst = NULL, max_iter = 500, tol = c(1e-6, 1e-6), algo ="CD", parallel=FALSE)  {
   n <- dim(X)[1]
   d <- dim(X)[2]
   if (is.null(gamma_lst)) {
