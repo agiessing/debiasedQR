@@ -15,7 +15,7 @@ install.packages("DebiasInfer")
 The development version can be installed from github:
 
 ```R
-devtools::install_github("agiessing/debiasedQR", subdir = "R_Package")
+devtools::install_github("agiessing/debiasedQR")
 ```
 
 ## Toy Example
