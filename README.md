@@ -91,7 +91,7 @@ dqr1 <- debiasedPredict(fit1, robust=FALSE)
 
 dqr1$debias # debiased estimate (based on primal variable w)
 dqr1$dual   # debiased estimate (based on dual variable v)
-dqr1$pilot  # biased pilot estimate (based on L1-penalized QR)
+dqr1$pilot  # biased pilot estimate (based on L1-penalized QR estimate)
 dqr1$avar   # estimate of asymptotic variance of debiased estimate
 
 ## Debiased quantile function，tuning parameter gamma selected by cross-validation
@@ -102,7 +102,7 @@ dqr2 <- debiasedPredict(fit2, cv_rule = "1se", robust=FALSE)
 
 dqr2$debias # debiased estimate (based on primal variable w)
 dqr2$dual   # debiased estimate (based on dual variable v)
-dqr2$pilot  # biased pilot estimate (based on L1-penalized QR)
+dqr2$pilot  # biased pilot estimate (based on L1-penalized QR estimate)
 dqr2$avar   # estimate of asymptotic variance of debiased estimate
 
 ## Debiased quantile function, tuning parameter selected by cross-validation
@@ -120,7 +120,7 @@ dqr3 <- debiasedPredict(fit3, cv_rule = "1se", robust=FALSE)
 
 dqr3$debias # debiased estimate (based on primal variable w)
 dqr3$dual   # debiased estimate (based on dual variable v)
-dqr3$pilot  # biased pilot estimate (based on L1-penalized QR)
+dqr3$pilot  # biased pilot estimate (based on L1-penalized QR estimate)
 dqr3$avar   # estimate of asymptotic variance of debiased estimate
 
 ## Asymptotic 95% confidence intervals for q_0 at querry point x
