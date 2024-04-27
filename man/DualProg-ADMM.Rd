@@ -35,12 +35,12 @@ tol = c(1e-6, 1e-6), quiet = TRUE)
   Tolerance levels to determine convergence of the ADMM algorithm. Default value is c(1e-6, 1e-6).
 }
   \item{quiet}{
-  If quiet = TRUE, then now messages are displayed.
+  If quiet = TRUE, then no messages are displayed.
 }
 }
 
 \value{
-  Solution to the dula debiasing program.
+  Solution to the dual debiasing program.
 }
 \references{
   Giessing, A. and Wang, J. (2023). Debiased inference on heterogeneous quantile treatment effects with regression rank-scores. \emph{Journal of the Royal Statistical Society: Series B (Statistical Methodology)}, 85(5): 1561–1588. \url{https://doi.org/10.1093/jrsssb/qkad075}
