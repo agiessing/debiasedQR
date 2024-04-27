@@ -1,4 +1,4 @@
-# ``debiasedQR``: An R package for debiased inference on high-dimensional linear quantile regression models via regression rank-scores
+# ``debiasedQR``: An R package for debiased inference on high-dimensional quantile regression models via regression rank-scores
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/DebiasInfer)](https://CRAN.R-project.org/package=DebiasInfer)
