@@ -53,7 +53,7 @@ eps <- sig * rnorm(n, 0, 1)
 Y <- drop(X %*% beta_0) + eps
 
 ## True conditional quantile function at querry point x
-q_0 <- x[-1] %*% beta_0 + x[1]*sig * qnorm(tau, 0,1)
+q_0 <- x[-1] %*% beta_0 + x[1] * sig * qnorm(tau, 0,1)
 q_0
 
 ## Debiased quantile function for fixed tuning parameter gamma = 0.33
