@@ -13,8 +13,12 @@ library(devtools)
 install_github("agiessing/debiasedQR")
 ```
 
-Usage
+Example usage
 --------
+The R package has three major functions: drq(), drqcv(), and debiasedPredict(). 
+
+Below code illustrates how to use these functions.
+
 ```R
 library(MASS)
 library(CVXR)
