@@ -11,11 +11,10 @@ devtools::install_github("agiessing/debiasedQR")
 ## Toy Example
 ```R
 library(MASS)
-library(quantreg)
 library(CVXR)
 library(caret)
-library(doParallel)
 library(mvtnorm)
+library(quantreg)
 library(debiasedQR)
 
 set.seed(2024)
@@ -68,6 +67,9 @@ dqr2$avar   # estimate of asymptotic variance of debiased estimate
 
 ## Debiased quantile function, tuning parameter selected by cross-validation
 ## (multiple CPUs, substantially faster than single CPU)
+
+library(doParallel)
+
 ncpu <- max(1L, detectCores() - 2L, na.rm = TRUE)
 cl <- makeCluster(ncpu)
 registerDoParallel(cl)
