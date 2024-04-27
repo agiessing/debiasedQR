@@ -1,3 +1,38 @@
+#' This function returns a .drqcv object, which can be fed into the function
+#' debiasedPredict() to compute the rank-score debiased estimate of the
+#' conditional quantile function at querry point x.
+#'
+#' @param Y         Responses.
+#' @param X         Covariates.
+#' @param x         Querry point at which to evaluate the conditional quantile
+#'                  function of Y given X = x.
+#' @param tau       Quantile level "\eqn{\tau \in (0,1)}".
+#' @param density   Options for estimating the density matrix: "nid" (non-iid data),
+#'                  "iid" (iid data), and "iidGaussian" (iid Gaussian data).
+#' @param sparsity  Only relevant if screening = TRUE. Upper bound on sparsity of
+#'                  the quantile regression function. Default value NULL.
+#' @param cv_fold   Cross-validation rule to be applied to .drqcv object to select
+#'                  optimal tuning parameter "\eqn{gamma >0}". Choices are `1se',
+#'                  `mincv', and `minfeas'. For details see docu of optGamma().
+#'                  Default value is 5.
+#' @gamma_lst       List of tuning parameters "\eqn{\gamma > 0}" for the primal
+#'                  debiasing program from which to choose the optimal value.
+#'                  The default value NULL results in a list with 41 equally spaced
+#'                  values from 0 to the maximum norm of the querry point x. If
+#'                  set manually, the end point should always be the maximum norm
+#'                  of the querry point x. Default value is NULL.
+#' @param max_iter  Maximum number of iterations of the coordinate descent
+#'                  algorithm or alternating direction of multiplier method.
+#'                  Default value is 500.
+#' @param tol       Only relevant if algo = "ADMM". Default value is c(1e-6, 1e-6).
+#' @param algo      Algorithm for solving the dual program. Options are "CD"
+#'                  (coordinate descent) and "ADMM" (alternating direction of
+#'                  multiplier method).
+#' @param parallel  If parallel = TRUE, cross-validation is solved in parallel
+#'                  using foreach().
+#'
+#' @value dual_loss List of values of the cross-validated dual objective function.
+
 #' @import MASS
 #' @import quantreg
 #' @importFrom caret createFolds
@@ -68,7 +103,7 @@ drqcv <- function(Y, X, x, tau, density = "nid", sparsity = NULL, cv_fold = 5, g
     f_ind = f_ind + 1
   }
 
-  dfit<- list()
+  dfit <- list()
   class(dfit) <- "drqcv"
   dfit$X <- X
   dfit$Y <- Y
