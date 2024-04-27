@@ -8,7 +8,7 @@ The development version can be installed from github:
 devtools::install_github("agiessing/debiasedQR")
 ```
 
-## Illustrative Toy Example
+## Toy Example
 ```R
 library(MASS)
 library(quantreg)
