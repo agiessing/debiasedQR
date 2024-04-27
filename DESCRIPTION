@@ -1,6 +1,6 @@
 Package: debiasedQR
 Type: Package
-Title: Debiased inference on L1-penalized high-dimensional linear quantile regression models
+Title: Debiased inference on L1-penalized high-dimensional linear quantile regression models via regression rank-scores
 Version: 0.1.0
 Author: c(person("Alexander", "Giessing", role = c("aut", "cre"),
                      email = "giessing@umich.edu",
