@@ -68,7 +68,7 @@ drq <- function(Y, X, x, tau, density = "nid", sparsity = NULL, lambda = NULL, g
 
   dual_loss <- dualObj(X, x = x[-1], Psi = diag(diag(Psi_hat)^2), v = drop(v_hat), gamma = gamma)
 
-  dfit<- list()
+  dfit <- list()
   class(dfit) <- "drq"
   dfit$w <- drop(w_hat)
   dfit$v <- drop(v_hat)
