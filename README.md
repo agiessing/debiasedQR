@@ -6,7 +6,7 @@ This package currently offers two algorithmic options: Alternating Direction of 
 
 Installation guide
 --------
-To install a development version of this package in R, run the following commands:
+We will soon release of the R package on CRAN. In the meantime, to install a development version of this package in R, run the following commands:
 
 ```R
 library(devtools)
