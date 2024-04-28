@@ -9,8 +9,9 @@
 #' @param tau        Quantile level "\eqn{\tau \in (0,1)}".
 #' @param density    Options for estimating the density matrix: "nid" (non-iid
 #'                   data), "iid" (iid data), and "iidGaussian" (iid Gaussian data).
-#' @param sparsity   Only relevant if screening = TRUE in densityMatrix(). Upper bound on sparsity
-#'                   of the quantile regression function. Default value NULL.
+#' @param sparsity   Only relevant if screening = TRUE in densityMatrix(). Upper
+#'                   bound on sparsity of the quantile regression function. Default
+#'                   value is NULL.
 #' @param cv_fold    Cross-validation rule to be applied to .drqcv object to select
 #'                   optimal tuning parameter "\eqn{gamma >0}". Default value is 5.
 #'                   For details see docu of optGamma().
