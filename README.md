@@ -9,7 +9,7 @@ library(devtools)
 install_github("agiessing/debiasedQR")
 ```
 
-The package currently offers two algorithmic options: Alternating Direction Method of Multipliers (ADMM) and Proximal Coordinate Descent (CD). The simulation study and data analysis in Giessing and Wang (2023) were conducted using the ADMM algorithm. We have found that the newly implemented Proximal CD algorithm converges substantially faster, is more accurate, and also more robust when applied to extreme quantiles. We therefore recommend to use the default setting with the Proximal CD algorithm.
+The package currently offers two algorithmic options: Alternating Direction Method of Multipliers (ADMM) and Proximal Coordinate Descent (CD). The simulation study and data analysis in Giessing and Wang (2023) were conducted using the ADMM algorithm. We have found that the newly implemented Proximal CD algorithm converges substantially faster, is more accurate, and also more robust when applied to extreme quantiles. We therefore recommend to use the default setting with the Proximal CD algorithm. Moreover, compared to the original implementation in Giessing in Wang (2023) we now estimate the conditional densities that are needed as nuisance parameters in the priaml and dual rank-score debiasing programs in the following two-estep procedure: first, we use a version of the iterative sure independence screening to select a model (e.g. Fan and Lv 2008), then we refit the quantile regression function on the selected model and use this refitted model to compute the densities.
 
 ## Usage
 The R package has three main functions: 
@@ -111,6 +111,8 @@ dqr3$avar   # estimate of the asymptotic variance of the debiased estimate
 References
 --------
 </a> A. Giessing and J. Wang (2023). Debiased inference on heterogeneous quantile treatment effects with regression rank-scores. *Journal of the Royal Statistical Society Series B: Statistical Methodology*. 85(5), 1561–1588. https://doi.org/10.1093/jrsssb/qkad075
+
+</a> J. Fan and J. Lv (2008). Sure Independence Screening for Ultrahigh Dimensional Feature Space (with discussion). *Journal of Royal Statistical Society B: Statistical Methodology*, 70(5), 849-911. https://doi.org/10.1111/j.1467-9868.2008.00674.x
 
 </a> A. Belloni and V. Chernozhukov (2011). $\ell_1$-penalized quantile regression in high-dimensional sparse models. *The Annals of Statistics*. 39(1), 82-130. https://doi.org/10.1214/10-AOS827
 
