@@ -42,26 +42,26 @@ tau <- 0.6
 Sigma <- toeplitz((1/2)^{0:(d-1)})
 sig <- 1
 
-## Querry point at which to evaluate the conditional quantile function
+# Querry point at which to evaluate the conditional quantile function
 x <- rep(0, d+1)
 x[c(1, 2, 3, 4, 5, 7, 8)] <- rep(1, 7)
 
-## True regression coefficient
+# True regression coefficient
 s_beta <- 5
 beta_0 <- rep(0, d)
 beta_0[1:s_beta] <- 1/sqrt(s_beta)
 
-## Data generating process
+# Data generating process
 X <-  mvrnorm(n, mu = rep(0, d), Sigma)
 eps <- sig * rnorm(n, 0, 1)
 Y <- drop(X %*% beta_0) + eps
 
-## True conditional quantile function at querry point x
+# True conditional quantile function at querry point x
 q_0 <- x[-1] %*% beta_0 + x[1] * sig * qnorm(tau, 0,1)
 q_0
 
 ## EXAMPLE 1
-## Debiased quantile function for fixed tuning parameter gamma = 0.33
+# Debiased quantile function for fixed tuning parameter gamma = 0.33
 fit1 <- drq(Y, X, x, tau, density="nid", sparsity = 10,
             lambda = lambdaBC(X=X, tau=tau), gamma = 0.33)
 dqr1 <- debiasedPredict(fit1, robust=FALSE)
@@ -71,14 +71,14 @@ dqr1$dual   # debiased estimate (based on dual variable v)
 dqr1$pilot  # biased pilot estimate (based on L1-penalized QR estimate)
 dqr1$avar   # estimate of the asymptotic variance of the debiased estimate
 
-## Asymptotic 95% confidence intervals for q_0 at querry point x
+# Asymptotic 95% confidence intervals for q_0 at querry point x
 cat("The 95% confidence interval for q_0 is [",
     dqr1$debias - sqrt(dqr1$avar) / sqrt(n) * qnorm(1-0.05/2), ", ",
     dqr1$debias + sqrt(dqr1$avar) / sqrt(n) * qnorm(1-0.05/2), "].\n", sep = "")
 
 ## EXAMPLE 2
-## Debiased quantile function，tuning parameter gamma selected via cross-validation
-## (single CPU)
+# Debiased quantile function，tuning parameter gamma selected via cross-validation
+# (single CPU)
 fit2 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
               max_iter = 1000, parallel = FALSE)
 dqr2 <- debiasedPredict(fit2, cv_rule = "1se", robust=FALSE)
@@ -89,8 +89,8 @@ dqr2$pilot  # biased pilot estimate (based on L1-penalized QR estimate)
 dqr2$avar   # estimate of the asymptotic variance of the debiased estimate
 
 ## EXAMPLE 3
-## Debiased quantile function, tuning parameter selected via cross-validation
-## (multiple CPUs, parallelized cross-validation)
+# Debiased quantile function, tuning parameter selected via cross-validation
+# (multiple CPUs, parallelized cross-validation)
 
 library(doParallel)
 
@@ -106,9 +106,6 @@ dqr3$debias # debiased estimate (based on primal variable w)
 dqr3$dual   # debiased estimate (based on dual variable v)
 dqr3$pilot  # biased pilot estimate (based on L1-penalized QR estimate)
 dqr3$avar   # estimate of the asymptotic variance of the debiased estimate
-
-
-
 ```
 
 References
