@@ -110,7 +110,7 @@ dqr3$avar   # estimate of the asymptotic variance of the debiased estimate
 
 References
 --------
-<a >[1]</a> A. Giessing and J. Wang (2023). Debiased inference on heterogeneous quantile treatment effects with regression rank-scores. *Journal of the Royal Statistical Society Series B: Statistical Methodology*. 85(5), 1561–1588. https://doi.org/10.1093/jrsssb/qkad075
+</a> A. Giessing and J. Wang (2023). Debiased inference on heterogeneous quantile treatment effects with regression rank-scores. *Journal of the Royal Statistical Society Series B: Statistical Methodology*. 85(5), 1561–1588. https://doi.org/10.1093/jrsssb/qkad075
 
-<a >[2]</a> A. Belloni and V. Chernozhukov (2011). $\ell_1$-penalized quantile regression in high-dimensional sparse models. *The Annals of Statistics*. 39(1), 82-130. https://doi.org/10.1214/10-AOS827
+</a> A. Belloni and V. Chernozhukov (2011). $\ell_1$-penalized quantile regression in high-dimensional sparse models. *The Annals of Statistics*. 39(1), 82-130. https://doi.org/10.1214/10-AOS827
 
