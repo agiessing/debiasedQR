@@ -9,8 +9,9 @@
 #' @param tau        Quantile level "\eqn{\tau \in (0,1)}".
 #' @param density    Options for estimating the density matrix: "nid" (non-iid data),
 #'                   "iid" (iid data), and "iidGaussian" (iid Gaussian data).
-#' @param sparsity   Only relevant if screening = TRUE. Upper bound on sparsity of
-#'                   the quantile regression function. Default value NULL.
+#' @param sparsity   Only relevant if screening = TRUE in densityMatrix(). Upper
+#'                   bound on sparsity of the quantile regression function. Default
+#'                   value is NULL.
 #' @param lambda     Regularization parameter for L1-penalized quantile regression
 #'                   problem.
 #' @param gamma      Tuning parameter for primal debiasing program.
