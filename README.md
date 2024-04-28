@@ -12,7 +12,7 @@ install_github("agiessing/debiasedQR")
 The package currently offers two algorithmic options: Alternating Direction of Multiplier Method (ADMM) and Proximal Coordinate Descent (CD). The simulation study and data analysis in Giessing and Wang (2023) were conducted using the ADMM algorithm. We have found that the newly implemented Proximal CD algorithm converges substantially faster, is more accurate, and also more robust when applied to extreme quantiles. We therefore recommend to use the default setting with the Proximal CD algorithm.
 
 ## Usage
-The R package has three major functions: 
+The R package has three main functions: 
 
 - ``drq()`` Solves the primal and dual rank-score debiasing programs in Giessing and Wang (2023) for a given tuning parameter $\gamma > 0$, provided that the primal problem is feasible and that strong duality holds.
 - ``drqcv()`` Solves primal and dual rank-score debiasing programs for a range of tuning parameters and returns the values of the optimal cross-validated dual losses, which can be used to determine the optimal tuning parameter $\gamma^* > 0$. We provide the option to parallelize these computations. 
