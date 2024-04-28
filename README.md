@@ -18,7 +18,7 @@ The R package has three major functions:
 - ``drqcv()`` Solves primal and dual rank-score debiasing programs for a range of tuning parameters and returns the values of the optimal cross-validated dual losses, which can be used to determine the optimal tuning parameter $\gamma^* > 0$. We provide the option to parallelize these computations. 
 - ``debiasedPredict()`` A wrapper function which takes either `.drq` or `.drqcv` objects and returns the biased $\ell_1$-penalized pilot estimate of the conditional quantile function, two debiased estimates of the conditional quantile function (based on the solutions to the primal and dual programs), and an estimate of the asymptotic variance of the debiased estimate. When applied to a `.drqcv` object, the wrapper function first finds the optimal tuning parameter $\gamma^* > 0$ which minimizes the cross-validated dual loss function.
 
-If the two debiased estimates produced by `debiasedPredict()` differ, then strong duality might not hold and the asymptotic guarantees in Giessing and Wang (2023) might not apply. This typically only happens, if either ADMM or Proximal CD algorithms did not converge. In this case, we suggest to increase the maximum number of iterations of these algorithms.
+In rare cases the two debiased estimates produced by `debiasedPredict()` may differ. This typically only happens, if either ADMM or Proximal CD algorithms did not converge. In this case, we suggest to increase the maximum number of iterations of these algorithms.
 
 When using `drqcv()` the penalty parameter of the $\ell_1$-penalized quantile regression problem is chosen data adaptively, exploiting the pivotal properties of the gradient of the check-loss function (e.g. Belloni and Chernozhukov, 2011).
 
