@@ -117,7 +117,7 @@ References
 --------
 </a> A. Belloni and V. Chernozhukov (2011). $\ell_1$-penalized quantile regression in high-dimensional sparse models. *The Annals of Statistics*. 39(1), 82-130. https://doi.org/10.1214/10-AOS827
 
-</a> J. Fan and J. Lv (2008). Sure Independence Screening for Ultrahigh Dimensional Feature Space (with discussion). *Journal of the Royal Statistical Society B: Statistical Methodology*, 70(5), 849-911. https://doi.org/10.1111/j.1467-9868.2008.00674.x
+</a> J. Fan and J. Lv (2008). Sure independence screening for ultrahigh dimensional feature space (with discussion). *Journal of the Royal Statistical Society B: Statistical Methodology*, 70(5), 849-911. https://doi.org/10.1111/j.1467-9868.2008.00674.x
 
 </a> A. Giessing and J. Wang (2023). Debiased inference on heterogeneous quantile treatment effects with regression rank-scores. *Journal of the Royal Statistical Society Series B: Statistical Methodology*. 85(5), 1561–1588. https://doi.org/10.1093/jrsssb/qkad075
 
