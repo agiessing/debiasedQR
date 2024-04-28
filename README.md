@@ -14,6 +14,8 @@ First, we now offer two algorithmic options: Alternating Direction Method of Mul
 
 Second, we now estimate the conditional densities (needed for the primal and dual rank-score debiasing programs) in a two-step procedure: first, we apply a version of the iterative sure independence screening to select a model (e.g. Fan and Lv 2008), then we compute the conditional densities using only the selected model. This procedure proves to be more robust, especially for extreme quantiles. The downside of this approach is that it requires a (tight) upper bound on the model size.
 
+The theoretical and statistical results in Giessing and Wang (2023) are unaffected by these computational modifications.
+
 ## Usage
 The R package has three main functions: 
 
