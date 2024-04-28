@@ -14,7 +14,7 @@ The package currently offers two algorithmic options: Alternating Direction of M
 ## Usage
 The R package has three major functions: 
 
-- ``drq()`` Solves the primal and dual rank-score debiasing programs for a given tuning parameter $\gamma > 0$, provided that the primal problem is feasible and that strong duality holds.
+- ``drq()`` Solves the primal and dual rank-score debiasing programs in Giessing and Wang (2023) for a given tuning parameter $\gamma > 0$, provided that the primal problem is feasible and that strong duality holds.
 - ``drqcv()`` Solves primal and dual rank-score debiasing programs via cross-validation and returns the values of the optimal cross-validated dual losses, which can be used to determine the optimal tuning parameter $\gamma^* > 0$.
 - ``debiasedPredict()`` Wrapper function which takes either .drq or .drqcv objects from above two functions and returns two debiased estimates of the conditional quantile function (one based on the primal variable, another based on the dual variable), the biased $\ell_1$-penalized pilot estimate of the conditional quantile function, and an estimate of the asymptotic variance of the debiased estimate. When applied to a .drgcv object, the wrapper first finds the optimal tuning parameter $\gamma^* > 0$ based on cross-validated dual losses.
 
