@@ -35,7 +35,7 @@ Returns a list of penalty parameters of length dim(X) + 1. If intercept = FAlSE,
 }
 
 \references{
-  Belloni, A. and Chernozhukov, V. (2011). L1-penalized quantile regression in high-dimensional sparse models. \emph{Annals of Statistics}. 39 (1) 82 - 130. \url{https://doi.org/10.1214/10-AOS827}
+  Belloni, A. and Chernozhukov, V. (2011). L1-penalized quantile regression in high-dimensional sparse models. \emph{Annals of Statistics}. 39 (1) 82 - 130. \doi{10.1214/10-AOS827}
 }
 
 \author{

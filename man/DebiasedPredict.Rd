@@ -37,7 +37,7 @@ Returns the debiased estimate of the conditional quantile of Y given X = x, wher
 \references{
   Giessing, A. and Wang, J. (2023). Debiased inference on heterogeneous quantile treatment effects with regression rank-scores.
   \emph{Journal of the Royal Statistical Society Series B: Statistical Methodology}, 85(5): 1561–1588.
-  \url{https://doi.org/10.1093/jrsssb/qkad075}
+  \doi{10.1093/jrsssb/qkad075}
 }
 \author{
   Alexander Giessing, \email{giessing@umich.edu}
@@ -77,7 +77,7 @@ Y <- drop(X \%*\% beta_0) + eps
 ## True conditional quantile function
 q_0 <- x[-1] \%*\% beta_0 + x[1]*sig * qnorm(tau, 0,1)
 
-## Debiased quantile function，tuning parameter selected by cross-validation
+## Debiased quantile function, tuning parameter selected by cross-validation
 
 fit1 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
              max_iter = 1000, parallel = FALSE)
@@ -95,10 +95,10 @@ dQR1$pilot
 # Estimate of asymptotic variance of debiased estimate
 dQR1$avar
 
-## Debiased quantile function，tuning parameter selected by cross-validation
+## Debiased quantile function, tuning parameter selected by cross-validation
 ## (parallelized, can be substantially faster)
 
-ncpu <- 2 # for compatibility reason with CRAN
+ncpu <- 2 # for compatibility reasons with CRAN
 #ncpu <- max(1L, detectCores() - 2L, na.rm = TRUE) # for general use
 cl <- makeCluster(ncpu)
 registerDoParallel(cl)

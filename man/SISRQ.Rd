@@ -33,7 +33,7 @@ Returns a model of size at most kM (sparsit level).
 }
 
 \references{
-  Fan, J. and Lv, J. (2008). Sure independence screening for ultrahigh dimensional feature space. \emph{Journal of the Royal Statistical Society: Series B (Statistical Methodology)}, 70: 849-911. \url{https://doi.org/10.1111/j.1467-9868.2008.00674.x}
+  Fan, J. and Lv, J. (2008). Sure independence screening for ultrahigh dimensional feature space. \emph{Journal of the Royal Statistical Society: Series B (Statistical Methodology)}, 70: 849-911. \doi{10.1111/j.1467-9868.2008.00674.x}
 }
 
 \author{
