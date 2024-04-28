@@ -20,7 +20,7 @@ The R package has three major functions:
 
 If the two debiased estimates produced by `debiasedPredict()` differ, then strong duality may not hold and the asymptotic guarantees in Giessing and Wang (2023) may not apply. This typically only happens, if either ADMM or Proximal CD algorithms did not converge. In this case, we suggest to increase the maximum number of iterations of these algorithms.
 
-By default the penalty parameter of the $\ell_1$-penalized quantile regression problem is chosen data adaptively, exploiting the pivotal properties of the gradient of the check-loss function (see Belloni and Chernozhukov, 2011 and Koenker, 2011).
+By default the penalty parameter of the $\ell_1$-penalized quantile regression problem is chosen data adaptively, exploiting the pivotal properties of the gradient of the check-loss function (e.g. Belloni and Chernozhukov, 2011).
 
 ## Toy examples
 Below code illustrates the main functionalities of the R package.
@@ -108,7 +108,7 @@ cat("The 95% confidence interval for q_0 is [",
 
 References
 --------
-<a >[1]</a> A. Giessing and J. Wang (2023) Debiased inference on heterogeneous quantile treatment effects with regression rank-scores. *Journal of the Royal Statistical Society Series B: Statistical Methodology*. 85(5), 1561–1588, [https://doi.org/10.1093/jrsssb/qkad075]
+<a >[1]</a> A. Giessing and J. Wang (2023). Debiased inference on heterogeneous quantile treatment effects with regression rank-scores. *Journal of the Royal Statistical Society Series B: Statistical Methodology*. 85(5), 1561–1588 [https://doi.org/10.1093/jrsssb/qkad075]
 
-<a >[2]</a> 
+<a >[2]</a> A. Belloni and V. Chernozhukov (2011). $\ell_1$-penalized quantile regression in high-dimensional sparse models. *The Annals of Statistics*. 39(1), 82-130. [https://doi.org/10.1214/10-AOS827]
 
