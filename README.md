@@ -81,7 +81,7 @@ cat("The 95% confidence interval for q_0 is [",
 # (single CPU)
 fit2 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
               max_iter = 1000, parallel = FALSE)
-dqr2 <- debiasedPredict(fit2, cv_rule = "1se", robust=FALSE)
+dqr2 <- debiasedPredict(fit2, cv_rule = "1se", robust = FALSE)
 
 dqr2$debias # debiased estimate (based on primal variable w)
 dqr2$dual   # debiased estimate (based on dual variable v)
@@ -100,7 +100,7 @@ registerDoParallel(cl)
 fit3 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
               max_iter = 1000, parallel = TRUE)
 stopCluster(cl)
-dqr3 <- debiasedPredict(fit3, cv_rule = "1se", robust=FALSE)
+dqr3 <- debiasedPredict(fit3, cv_rule = "1se", robust = FALSE)
 
 dqr3$debias # debiased estimate (based on primal variable w)
 dqr3$dual   # debiased estimate (based on dual variable v)
