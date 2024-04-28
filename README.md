@@ -10,18 +10,18 @@ install_github("agiessing/debiasedQR")
 ```
 The current package differs in two ways from the original code that we used in the simulation study and data analysis in Giessing and Wang (2023):
 
-First, we now offer two algorithmic options: Alternating Direction Method of Multipliers (ADMM) and Proximal Coordinate Descent (CD). We have found that the newly implemented Proximal CD algorithm converges substantially faster, is more accurate, and also more robust when applied to extreme quantiles. We have therefore made the Proximal CD algorithm the default setting.
+First, we now offer two algorithms for solving the dual debiasing program: Alternating Direction Method of Multipliers (ADMM) and Proximal Coordinate Descent (CD). We have found that the newly implemented Proximal CD algorithm converges substantially faster, is more accurate, and also more robust when applied to extreme quantiles. We have therefore made the Proximal CD algorithm the default.
 
-Second, we now estimate the conditional densities (needed for the primal and dual rank-score debiasing programs) in a two-step procedure: first, we apply a version of the iterative sure independence screening to select a model (e.g. Fan and Lv 2008), then we compute the conditional densities using only the selected model. This procedure proves to be more robust, especially for extreme quantiles. The downside of this approach is that it requires a (tight) upper bound on the model size.
+Second, we now estimate the conditional densities (needed for the primal and dual rank-score debiasing programs) in a two-step procedure: first, we apply a version of the iterative sure independence screening to select a model (e.g. Fan and Lv 2008), then we compute the conditional densities using only the selected model. This procedure proves to be more robust, especially for extreme quantiles. The downside of this approach is that it requires an upper bound on the model size.
 
-The theoretical and statistical results in Giessing and Wang (2023) are unaffected by these modifications.
+The theoretical results in Giessing and Wang (2023) are unaffected by these modifications.
 
 ## Usage
 The R package has three main functions: 
 
 - ``drq()`` Solves the primal and dual rank-score debiasing programs in Giessing and Wang (2023) for a given tuning parameter $\gamma > 0$, provided that the primal problem is feasible and that strong duality holds. [more](https://github.com/agiessing/debiasedQR/blob/main/R/DebiasProg.R)
-- ``drqcv()`` Solves primal and dual rank-score debiasing programs for a range of tuning parameters and returns the values of the cross-validated dual losses, which can be used to determine the optimal tuning parameter $\gamma^* > 0$. We provide the option to parallelize these computations. [more](https://github.com/agiessing/debiasedQR/blob/main/R/DebiasProgCV.R) 
-- ``debiasedPredict()`` A wrapper function which takes either `.drq` or `.drqcv` objects and returns the biased $\ell_1$-penalized pilot estimate of the conditional quantile function, two debiased estimates of the conditional quantile function (based on the solutions to the primal and dual programs), and an estimate of the asymptotic variance of the debiased estimate. When applied to a `.drqcv` object, the wrapper function first finds the optimal tuning parameter $\gamma^* > 0$ which minimizes the cross-validated dual loss function. [more](https://github.com/agiessing/debiasedQR/blob/main/R/DebiasedPredict.R)
+- ``drqcv()`` Solves the primal and dual rank-score debiasing programs for a range of tuning parameters and returns the values of the cross-validated dual losses, which can be used to determine the optimal tuning parameter $\gamma^* > 0$. [more](https://github.com/agiessing/debiasedQR/blob/main/R/DebiasProgCV.R) 
+- ``debiasedPredict()`` A wrapper function which takes either `.drq` or `.drqcv` objects and returns the biased $\ell_1$-penalized pilot estimate of the conditional quantile function, two debiased estimates of the conditional quantile function (based on the solutions of the primal and dual program, respectively), and an estimate of the asymptotic variance of the debiased estimate. When applied to a `.drqcv` object, the wrapper function first finds the optimal tuning parameter $\gamma^* > 0$ which minimizes the cross-validated dual loss function. [more](https://github.com/agiessing/debiasedQR/blob/main/R/DebiasedPredict.R)
 
 Occasionally, the two debiased estimates returned by `debiasedPredict()` differ. This only happens, if either ADMM or Proximal CD algorithms did not converge. In this case, we suggest to increase the maximum number of iterations of these algorithms.
 
