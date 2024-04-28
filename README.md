@@ -77,7 +77,7 @@ cat("The 95% confidence interval for q_0 is [",
     dqr1$debias + sqrt(dqr1$avar) / sqrt(n) * qnorm(1-0.05/2), "].\n", sep = "")
 
 # EXAMPLE 2
-# Debiased quantile function，tuning parameter gamma selected via cross-validation
+# Debiased quantile function，tuning parameter selected via cross-validation
 # (single CPU)
 fit2 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
               max_iter = 1000, parallel = FALSE)
