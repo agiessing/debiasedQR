@@ -8,7 +8,7 @@ To install a development version of this package in R, run the following command
 library(devtools)
 install_github("agiessing/debiasedQR")
 ```
-The current package differs in two ways from the original code that we used in the simulation study and data analysis in Giessing and Wang (2023).
+The current package differs in two ways from the original code that we used in the simulation study and data analysis in Giessing and Wang (2023):
 
 First, we now offer two algorithmic options: Alternating Direction Method of Multipliers (ADMM) and Proximal Coordinate Descent (CD). We have found that the newly implemented Proximal CD algorithm converges substantially faster, is more accurate, and also more robust when applied to extreme quantiles than the ADMM algorithm. We therefore recommend to use the default setting with the Proximal CD algorithm.
 
