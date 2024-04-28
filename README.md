@@ -22,7 +22,7 @@ If the two debiased estimates produced by `debiasedPredict()` differ, then stron
 
 By default the penalty parameter of the $\ell_1$-penalized quantile regression problem is chosen data adaptively, exploiting the pivotal properties of the gradient of the check-loss function (e.g. Belloni and Chernozhukov, 2011).
 
-## Example Usage
+## Examples
 Below code illustrates the main functionalities of the R package.
 
 ```R
