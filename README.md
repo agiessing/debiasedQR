@@ -12,7 +12,7 @@ The current package differs in two ways from the original code that we used in t
 
 First, we now offer two algorithmic options: Alternating Direction Method of Multipliers (ADMM) and Proximal Coordinate Descent (CD). We have found that the newly implemented Proximal CD algorithm converges substantially faster, is more accurate, and also more robust when applied to extreme quantiles. We therefore recommend to use the default setting with the Proximal CD algorithm.
 
-Second, we now estimate the conditional densities (needed for the primal and dual rank-score debiasing programs) in a two-step procedure: first, we apply a version of the iterative sure independence screening to select a model (e.g. Fan and Lv 2008), then we compute the conditional densities using only the selected modet. This procdure proves to be more robust, especially for extreme quantiles.
+Second, we now estimate the conditional densities (needed for the primal and dual rank-score debiasing programs) in a two-step procedure: first, we apply a version of the iterative sure independence screening to select a model (e.g. Fan and Lv 2008), then we compute the conditional densities using only the selected modet. This procedure proves to be more robust, especially for extreme quantiles. The downside of this approach is that it requires a (tight) upper bound on the model size.
 
 ## Usage
 The R package has three main functions: 
