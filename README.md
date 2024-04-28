@@ -20,7 +20,7 @@ The R package has three major functions:
 
 If the two debiased estimates produced by `debiasedPredict()` differ, then strong duality might not hold and the asymptotic guarantees in Giessing and Wang (2023) might not apply. This typically only happens, if either ADMM or Proximal CD algorithms did not converge. In this case, we suggest to increase the maximum number of iterations of these algorithms.
 
-By default the penalty parameter of the $\ell_1$-penalized quantile regression problem is chosen data adaptively, exploiting the pivotal properties of the gradient of the check-loss function (e.g. Belloni and Chernozhukov, 2011).
+By default when using `drqcv()` the penalty parameter of the $\ell_1$-penalized quantile regression problem is chosen data adaptively, exploiting the pivotal properties of the gradient of the check-loss function (e.g. Belloni and Chernozhukov, 2011).
 
 ## Examples
 Below code illustrates the main functionalities of the R package.
