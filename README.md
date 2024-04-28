@@ -61,7 +61,7 @@ q_0 <- x[-1] %*% beta_0 + x[1] * sig * qnorm(tau, 0,1)
 q_0
 
 ## EXAMPLE 1
-# Debiased quantile function for fixed tuning parameter gamma = 0.33
+## Debiased quantile function for fixed tuning parameter gamma = 0.33
 fit1 <- drq(Y, X, x, tau, density="nid", sparsity = 10,
             lambda = lambdaBC(X=X, tau=tau), gamma = 0.33)
 dqr1 <- debiasedPredict(fit1, robust=FALSE)
@@ -77,8 +77,8 @@ cat("The 95% confidence interval for q_0 is [",
     dqr1$debias + sqrt(dqr1$avar) / sqrt(n) * qnorm(1-0.05/2), "].\n", sep = "")
 
 ## EXAMPLE 2
-# Debiased quantile function，tuning parameter gamma selected via cross-validation
-# (single CPU)
+## Debiased quantile function，tuning parameter gamma selected via cross-validation
+## (single CPU)
 fit2 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
               max_iter = 1000, parallel = FALSE)
 dqr2 <- debiasedPredict(fit2, cv_rule = "1se", robust=FALSE)
@@ -89,8 +89,8 @@ dqr2$pilot  # biased pilot estimate (based on L1-penalized QR estimate)
 dqr2$avar   # estimate of the asymptotic variance of the debiased estimate
 
 ## EXAMPLE 3
-# Debiased quantile function, tuning parameter selected via cross-validation
-# (multiple CPUs, parallelized cross-validation)
+## Debiased quantile function, tuning parameter selected via cross-validation
+## (multiple CPUs, parallelized cross-validation)
 
 library(doParallel)
 
