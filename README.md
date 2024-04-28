@@ -69,7 +69,7 @@ q_0
 # Debiased quantile function for fixed tuning parameter gamma = 0.33
 fit1 <- drq(Y, X, x, tau, density = "nid", sparsity = 10,
             lambda = lambdaBC(X = X, tau = tau), gamma = 0.33)
-dqr1 <- debiasedPredict(fit1, robust = FALSE)
+dqr1 <- debiasedPredict(fit1)
 
 dqr1$debias # debiased estimate (based on primal variable w)
 dqr1$dual   # debiased estimate (based on dual variable v)
