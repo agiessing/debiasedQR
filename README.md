@@ -80,7 +80,9 @@ dqr1$avar   # estimate of the asymptotic variance of the debiased estimate
 cat("The 95% confidence interval for q_0 is [",
     dqr1$debias - sqrt(dqr1$avar) / sqrt(n) * qnorm(1-0.05/2), ", ",
     dqr1$debias + sqrt(dqr1$avar) / sqrt(n) * qnorm(1-0.05/2), "].\n", sep = "")
+```
 
+```R
 # EXAMPLE 2
 # Debiased quantile function，tuning parameter selected via cross-validation
 # (single CPU)
