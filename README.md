@@ -29,7 +29,7 @@ When using `drqcv()` the penalty parameter of the $\ell_1$-penalized quantile re
 
 ## Examples
 
-Below code illustrates the main functionalities of the R package. First, we draw samples from a simple high-dimensional sparse model.
+Below code illustrates the main functionalities of the R package. First, draw samples from a homoscedastic high-dimensional sparse regression model.
 
 ```R
 library(MASS)
@@ -63,9 +63,12 @@ q_0 <- x[-1] %*% beta_0 + x[1] * sig * qnorm(tau, 0,1)
 q_0
 ```
 
+Next, construct a debiased estimate of the conditional quantile function at querry point x for fixed tunning parameter $\gamma = 0.33$ and construct a symmetric $95\%$ confidence interval.
+
 ```R
 # EXAMPLE 1
 # Debiased quantile function for fixed tuning parameter gamma = 0.33
+
 library(CVXR)
 library(caret)
 library(quantreg)
@@ -85,6 +88,7 @@ cat("The 95% confidence interval for q_0 is [",
     dqr1$debias - sqrt(dqr1$avar) / sqrt(n) * qnorm(1-0.05/2), ", ",
     dqr1$debias + sqrt(dqr1$avar) / sqrt(n) * qnorm(1-0.05/2), "].\n", sep = "")
 ```
+
 
 ```R
 # EXAMPLE 2
