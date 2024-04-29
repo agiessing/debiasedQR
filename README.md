@@ -114,7 +114,6 @@ Parallelized version of example 2.
 # Debiased quantile function, tuning parameter selected via cross-validation
 # multiple CPUs, parallelized cross-validation
 
-
 library(doParallel)
 
 ncpu <- max(1L, detectCores() - 2L, na.rm = TRUE)
