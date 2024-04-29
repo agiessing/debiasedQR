@@ -109,7 +109,7 @@ dqr2$pilot  # biased pilot estimate (based on L1-penalized QR estimate)
 dqr2$avar   # estimate of the asymptotic variance of the debiased estimate
 ```
 
-Parallelized version of example 2.
+Parallelized version of previous example.
 
 ```R
 # EXAMPLE 3
