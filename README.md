@@ -31,7 +31,7 @@ When using `drqcv()` the penalty parameter of the $\ell_1$-penalized quantile re
 
 Below code illustrates the main functionalities of the R package. 
 
-Draw samples from a homoscedastic high-dimensional sparse regression model and evaluate the true conditional quantile function q_0 at querry point x and quantile level \tau = 0.6.
+Draw samples from a homoscedastic high-dimensional sparse regression model and evaluate the true conditional quantile function $q_0$ at querry point $x$ and quantile level $\tau = 0.6$.
 
 ```R
 # Sampling from a homoscedastic high-dimensional sparse regression model
