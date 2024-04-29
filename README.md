@@ -36,8 +36,7 @@ Draw samples from a homoscedastic high-dimensional sparse regression model and e
 ```R
 # Sampling from a homoscedastic high-dimensional sparse regression model
 
-library(MASS)
-library(mvtnorm)
+library(debiasedQR)
 
 set.seed(2024)
 
@@ -72,11 +71,6 @@ Compute the debiased estimate of the conditional quantile function at querry poi
 ```R
 # EXAMPLE 1
 # Debiased quantile function for fixed tuning parameter gamma = 0.33
-
-library(CVXR)
-library(caret)
-library(quantreg)
-library(debiasedQR)
 
 fit1 <- drq(Y, X, x, tau, density = "nid", sparsity = 10,
             lambda = lambdaBC(X = X, tau = tau), gamma = 0.33)
