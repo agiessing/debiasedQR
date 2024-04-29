@@ -28,15 +28,12 @@ If the two debiased estimates returned by `debiasedPredict()` differ, then eithe
 When using `drqcv()` the penalty parameter of the $\ell_1$-penalized quantile regression program is chosen data adaptively, exploiting the pivotal properties of the gradient of the check-loss function (e.g. Belloni and Chernozhukov, 2011).
 
 ## Examples
-Below code illustrates the main functionalities of the R package.
+
+Sampling from a simple high-dimensional sparse model.
 
 ```R
 library(MASS)
-library(CVXR)
-library(caret)
 library(mvtnorm)
-library(quantreg)
-library(debiasedQR)
 
 set.seed(2024)
 
@@ -64,9 +61,17 @@ Y <- drop(X %*% beta_0) + eps
 # True conditional quantile function at querry point x
 q_0 <- x[-1] %*% beta_0 + x[1] * sig * qnorm(tau, 0,1)
 q_0
+```
 
+Below code illustrates the main functionalities of the R package. 
+```R
 # EXAMPLE 1
 # Debiased quantile function for fixed tuning parameter gamma = 0.33
+library(CVXR)
+library(caret)
+library(quantreg)
+library(debiasedQR)
+
 fit1 <- drq(Y, X, x, tau, density = "nid", sparsity = 10,
             lambda = lambdaBC(X = X, tau = tau), gamma = 0.33)
 dqr1 <- debiasedPredict(fit1)
