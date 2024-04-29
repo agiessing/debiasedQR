@@ -63,7 +63,7 @@ q_0 <- x[-1] %*% beta_0 + x[1] * sig * qnorm(tau, 0,1)
 q_0
 ```
 
-Next, construct a debiased estimate of the conditional quantile function at querry point x for fixed tunning parameter $\gamma = 0.33$ and construct a symmetric $95%%$ confidence interval.
+Next, construct a debiased estimate of the conditional quantile function at querry point x for fixed tunning parameter $\gamma = 0.33$ and construct a symmetric 95\% confidence interval.
 
 ```R
 # EXAMPLE 1
