@@ -32,7 +32,7 @@ When using `drqcv()` the penalty parameter of the $\ell_1$-penalized quantile re
 Below code illustrates the main functionalities of the R package. First, draw samples from a homoscedastic high-dimensional sparse regression model.
 
 ```R
-## Sampling from a homoscedastic high-dimensional sparse regression model
+# Sampling from a homoscedastic high-dimensional sparse regression model
 
 library(MASS)
 library(mvtnorm)
@@ -65,7 +65,7 @@ q_0 <- x[-1] %*% beta_0 + x[1] * sig * qnorm(tau, 0,1)
 q_0
 ```
 
-Compute the debiased estimate of the conditional quantile function at querry point x for fixed tunning parameter $\gamma = 0.33$ and construct a symmetric 95\% confidence interval for the true conditional quantile function $q_0$.
+Compute the debiased estimate of the conditional quantile function at querry point x for fixed tuning parameter $\gamma = 0.33$ and construct a symmetric 95\% confidence interval for the true conditional quantile function $q_0$.
 
 ```R
 # EXAMPLE 1
@@ -91,11 +91,12 @@ cat("The 95% confidence interval for q_0 is [",
     dqr1$debias + sqrt(dqr1$avar) / sqrt(n) * qnorm(1-0.05/2), "].\n", sep = "")
 ```
 
+Use cross-validation to determine a suitable value of the tuning parameter $\gamma^* > 0$ and compute the debiased estimate of the conditional quantile function for $\gamma^* > 0$.
 
 ```R
 # EXAMPLE 2
 # Debiased quantile function，tuning parameter selected via cross-validation
-# (single CPU)
+
 fit2 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
               max_iter = 1000, parallel = FALSE)
 dqr2 <- debiasedPredict(fit2, cv_rule = "1se", robust = FALSE)
@@ -104,10 +105,15 @@ dqr2$debias # debiased estimate (based on primal variable w)
 dqr2$dual   # debiased estimate (based on dual variable v)
 dqr2$pilot  # biased pilot estimate (based on L1-penalized QR estimate)
 dqr2$avar   # estimate of the asymptotic variance of the debiased estimate
+```
 
+Parallelized version of example 2.
+
+```R
 # EXAMPLE 3
 # Debiased quantile function, tuning parameter selected via cross-validation
-# (multiple CPUs, parallelized cross-validation)
+# multiple CPUs, parallelized cross-validation
+
 
 library(doParallel)
 
