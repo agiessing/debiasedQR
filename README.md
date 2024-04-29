@@ -109,7 +109,7 @@ Parallelized version of the previous example.
 ```R
 # EXAMPLE 3
 # Debiased quantile function, tuning parameter selected via cross-validation
-# multiple CPUs, parallelized cross-validation
+# multiple cores, parallelized cross-validation
 
 library(doParallel)
 
