@@ -32,6 +32,8 @@ When using `drqcv()` the penalty parameter of the $\ell_1$-penalized quantile re
 Below code illustrates the main functionalities of the R package. First, draw samples from a homoscedastic high-dimensional sparse regression model.
 
 ```R
+## Sampling from a homoscedastic high-dimensional sparse regression model
+
 library(MASS)
 library(mvtnorm)
 
