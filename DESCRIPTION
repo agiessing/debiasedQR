@@ -16,5 +16,5 @@ Encoding: UTF-8
 Imports: stats, MASS, quantreg, CVXR, caret, doParallel, foreach
 RoxygenNote: 7.2.3
 NeedsCompilation: no
-Packaged: 2024-04-28 23:46:12 UTC; giessing
+Packaged: 2024-04-29 00:28:05 UTC; giessing
 Author: Alexander Giessing [aut, cre] (<https://orcid.org/0000-0002-6917-0652>)
