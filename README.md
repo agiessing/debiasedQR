@@ -29,7 +29,7 @@ When using `drqcv()` the penalty parameter of the $\ell_1$-penalized quantile re
 
 ## Examples
 
-Sampling from a simple high-dimensional sparse model.
+Below code illustrates the main functionalities of the R package. First, we draw samples from a simple high-dimensional sparse model.
 
 ```R
 library(MASS)
@@ -63,7 +63,6 @@ q_0 <- x[-1] %*% beta_0 + x[1] * sig * qnorm(tau, 0,1)
 q_0
 ```
 
-Below code illustrates the main functionalities of the R package. 
 ```R
 # EXAMPLE 1
 # Debiased quantile function for fixed tuning parameter gamma = 0.33
