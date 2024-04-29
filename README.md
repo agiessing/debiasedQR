@@ -37,6 +37,7 @@ Draw samples from a homoscedastic high-dimensional sparse regression model and e
 # Sampling from a homoscedastic high-dimensional sparse regression model
 
 library(debiasedQR)
+library(MASS)
 
 set.seed(2024)
 
