@@ -41,8 +41,8 @@ library(MASS)
 
 set.seed(2024)
 
-d <- 500
-n <- 200
+d <- 800
+n <- 300
 tau <- 0.6
 
 Sigma <- toeplitz((1/2)^{0:(d-1)})
