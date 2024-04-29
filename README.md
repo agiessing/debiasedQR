@@ -87,7 +87,7 @@ cat("The 95% confidence interval for q_0 is [",
     dqr1$debias + sqrt(dqr1$avar) / sqrt(n) * qnorm(1-0.05/2), "].\n", sep = "")
 ```
 
-Use cross-validation to determine a suitable value of the tuning parameter $\gamma^* > 0$ and compute the debiased estimate of the conditional quantile function for $\gamma^* > 0$.
+Use cross-validation to determine a suitable value of the tuning parameter $\gamma^* > 0$ and compute the debiased estimate of the conditional quantile function.
 
 ```R
 # EXAMPLE 2
