@@ -19,7 +19,7 @@ The theoretical results in Giessing and Wang (2023) are unaffected by these modi
 ## Usage
 The R package has three main functions: 
 
-- ``drq()`` Solves the primal and dual rank-score debiasing programs in Giessing and Wang (2023) for a given tuning parameter $\gamma > 0$, provided that the primal problem is feasible and that strong duality holds. [more](https://github.com/agiessing/debiasedQR/blob/main/R/DebiasProg.R)
+- ``drq()`` Solves the primal and dual rank-score debiasing programs in Giessing and Wang (2023) for a given tuning parameter $\gamma > 0$, provided that the primal program is feasible and that strong duality holds. [more](https://github.com/agiessing/debiasedQR/blob/main/R/DebiasProg.R)
 - ``drqcv()`` Solves the primal and dual rank-score debiasing programs for a range of tuning parameters and returns the values of the cross-validated dual losses, which can be used to determine the optimal tuning parameter $\gamma^* > 0$. [more](https://github.com/agiessing/debiasedQR/blob/main/R/DebiasProgCV.R) 
 - ``debiasedPredict()`` A wrapper function which takes either `.drq` or `.drqcv` objects and returns the biased $\ell_1$-penalized pilot estimate of the conditional quantile function, two debiased estimates of the conditional quantile function (based on the solutions of the primal and dual program, respectively), and an estimate of the asymptotic variance of the debiased estimate. When applied to a `.drqcv` object, the wrapper function first finds the optimal tuning parameter $\gamma^* > 0$ which minimizes the cross-validated dual loss function. [more](https://github.com/agiessing/debiasedQR/blob/main/R/DebiasedPredict.R)
 
