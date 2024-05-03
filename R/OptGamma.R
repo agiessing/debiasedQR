@@ -10,9 +10,10 @@
 #' @param cv_rule     Cross-validation rule to be applied to .drqcv object to
 #'                    select optimal tuning parameter "\eqn{gamma >0}". Choices
 #'                    are `1se', `mincv', and `minfeas'.
-#' @param robust      If robust = TRUE, then median and mean absolute deviation
-#'                    (instead of mean and standard deviation) are used when
-#'                    finding the optimal tuning parameter.
+#' @param robust      Only relevant for .drqcv objects. If robust = TRUE, then the
+#'                    largest and smallest dual losses are ignored when computing
+#'                    the average and standard deviation of the dual losses. If
+#'                    robust = FALSE, then all dual losses are used.
 #' @return gamma_opt  Optimal tuning parameter "\eqn{\gamma > 0}" of the primal
 #'                    problem chosen via cross-validation
 
