@@ -44,6 +44,7 @@ Returns the debiased estimate of the conditional quantile of Y given X = x, wher
 }
 
 \examples{
+\dontrun{
 library(MASS)
 library(quantreg)
 library(CVXR)
@@ -106,6 +107,7 @@ fit2 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
               max_iter = 1000, parallel = TRUE)
 dQR2 <- debiasedPredict(fit2, cv_rule = "1se", robust=FALSE)
 stopCluster(cl)
+}
 }
 
 \keyword{Utilities}

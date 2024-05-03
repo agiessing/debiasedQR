@@ -11,11 +11,12 @@
 #'                  "iid" (iid data), and "iidGaussian" (iid Gaussian data).
 #' @param sparsity  Only relevant if screening = TRUE. Upper bound on sparsity of
 #'                  the quantile regression function. Default value NULL.
-#' @param screening If screening = TRUE, then a version of the (iterative) sure
-#'                  indendence screening for linear quantile regression is used
-#'                  to select covariates and then estimate the density matrix based
-#'                  on the selected covariates. If screening = FALSE, then the
-#'                  provided value for beta is used to estimate the density matrix.
+#' @param screening  If screening = TRUE, then a version of the (iterative) sure
+#'                   independence screening for linear quantile regression is used
+#'                   to select covariates and then estimate the density matrix
+#'                   based on the selected covariates. If screening = FALSE, then
+#'                   the provided value for beta is used to estimate the density
+#'                   matrix.
 #'
 #' @import quantreg
 #' @import stats
@@ -28,13 +29,13 @@ densityMatrix <- function(Y, X, beta, tau, density="nid", sparsity, screening = 
   eps <- .Machine$double.eps^(1/2)
   h <- bandwidth.rq(tau, n, hs = TRUE, alpha = 0.2)
 
-  if (screening == TRUE) {
-    s <- sisrq(Y, X, tau, kM = sparsity, max_iter = 100)
-  } else {
-    s <- which( (abs(beta) > 1e-03) )
-  }
-
   if (density == "nid") {
+
+    if (screening == TRUE) {
+      s <- sisrq(Y, X, tau, kM = sparsity, max_iter = 100)
+    } else {
+      s <- which( (abs(beta) > 1e-03) )
+    }
 
     if (tau + h > 1)
       stop("tau + h > 1:  error in function `density.matrix'")
@@ -51,9 +52,15 @@ densityMatrix <- function(Y, X, beta, tau, density="nid", sparsity, screening = 
       dyhat <- as.matrix(X[, s]) %*% (bhi[-1] - blo[-1]) + bhi[1] - blo[1]
     }
 
-    f <- diag( pmax(0, (2 * h) / (dyhat - eps)) )
+    f <- diag( pmax( 0, (2 * h) / (dyhat - eps)) )
 
   } else if (density == "iid") {
+
+    if (screening == TRUE) {
+      s <- sisrq(Y, X, tau, kM = sparsity, max_iter = 100)
+    } else {
+      s <- which( (abs(beta) > 1e-03) )
+    }
 
     if(length(s) == 0){
       yq <- quantile(Y, tau)

@@ -18,6 +18,7 @@ drqcv(
   sparsity = NULL,
   cv_fold = 5,
   gamma_lst = NULL,
+  screening = TRUE,
   max_iter = 500,
   tol = c(1e-6, 1e-6),
   algo ="CD",
@@ -41,6 +42,8 @@ drqcv(
   \item{cv_fold}{Cross-validation rule to be applied to .drqcv object to select optimal tuning parameter "\eqn{gamma >0}". Choices are `1se', `mincv', and `minfeas'. For details see documentatio of optGamma().
 }
   \item{gamma_lst}{List of tuning parameters "\eqn{\gamma > 0}" for the primal debiasing program from which to choose the optimal value. The default value NULL results in a list with 41 equally spaced values from 0 to the maximum norm of the querry point x. If manually set, end point should always be the maximum norm of the querry point x.
+}
+  \item{screening}{If screening = TRUE, then a version of the (iterative) sure independence screening for linear quantile regression is used to select covariates and then estimate the density matrix based on the selected covariates. If screening = FALSE, then the provided value for beta is used to estimate the density matrix.
 }
   \item{max_iter}{
 Maximum number of iterations of the coordinate descent or alternating direction of multiplier method algorithm. Default value is 500.

@@ -24,19 +24,31 @@ optGamma <- function(dual_loss, gamma_lst, cv_fold, cv_rule, robust = TRUE) {
     stop(paste0("Missing list of tuning parameters!\n"))
   }
 
+  robustMean <- function(x) {
+    min <- which.min(x)
+    max <- which.max(x)
+    mean(x[-c(min, max)], na.rm=FALSE)
+  }
+
+  robustSd <- function(x) {
+    min <- which.min(x)
+    max <- which.max(x)
+    sd(x[-c(min, max)], na.rm=FALSE)
+  }
+
   if (robust == TRUE) {
-    mean_dual_loss <- apply(dual_loss, 2, median, na.rm = FALSE)
-    std_dual_loss <- apply(dual_loss, 2, function(x){mad(x, na.rm = FALSE)}) / sqrt(cv_fold)
+    mean_dual_loss <- apply(dual_loss, 2, FUN = robustMean)
+    se_dual_loss <- apply(dual_loss, 2, FUN = robustSd) / sqrt(cv_fold-2)
   } else {
     mean_dual_loss <- apply(dual_loss, 2, mean, na.rm = FALSE)
-    std_dual_loss <- apply(dual_loss, 2, function(x){sd(x, na.rm = FALSE)}) / sqrt(cv_fold)
+    se_dual_loss <- apply(dual_loss, 2, function(x){sd(x, na.rm = FALSE)}) / sqrt(cv_fold)
   }
 
   if (cv_rule == "mincv") {
     gamma_opt <- gamma_lst[which.min(mean_dual_loss)]
   }
   if (cv_rule == "1se") {
-    One_SE <- (mean_dual_loss > min(mean_dual_loss, na.rm = TRUE) + std_dual_loss[which.min(mean_dual_loss)]) &
+    One_SE <- (mean_dual_loss > min(mean_dual_loss, na.rm = TRUE) + se_dual_loss[which.min(mean_dual_loss)]) &
       (gamma_lst < gamma_lst[which.min(mean_dual_loss)])
     if (sum(One_SE, na.rm = TRUE) == 0) {
       One_SE <- rep(TRUE, length(gamma_lst))

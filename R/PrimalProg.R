@@ -29,7 +29,7 @@ primal <- function(X, x, Psi, gamma = 0.1, quiet = TRUE) {
   w <- Variable(rows = sum(mask), cols = 1)
   primal_obj <- Minimize(quad_form(w, diag(diag(Psi)[mask]) ))
   constraints <- list(x - (1/sqrt(n))*(t(w) %*%  X[mask,]) <= gamma,
-                     x - (1/sqrt(n))*(t(w) %*% X[mask,]) >= -gamma)
+                  x - (1/sqrt(n))*(t(w) %*% X[mask,]) >= -gamma)
   primal_prog <- Problem(primal_obj, constraints)
 
   tryCatch({

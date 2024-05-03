@@ -57,11 +57,11 @@ dualCD <- function(X, x, Psi=NULL, v_init=NULL, gamma=0.05, eps=1e-6, max_iter=5
     if ((cnt > max_iter) && (flag == 0)) {
       message(paste0("CD algorithm has reached max. no. of iterations for gamma = ", round(gamma, 4),
                      ". Re-running CD with small perturbation to design matrix..."))
-      A <- A + 1e-9*diag(d)
+      A <- A + 1/n^2*diag(d) #1e-9*diag(d)
       cnt <- 0
       flag <- 1
     }
   }
 
-  return(list(v = v_new))
+  return(list(v = v_new, iter = cnt))
 }

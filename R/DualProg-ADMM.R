@@ -76,5 +76,5 @@ dualADMM <- function(X, x, Psi=NULL, v_init=NULL, gamma = 0.2, rho=5, max_iter =
       }
     }
 
-  return(list(v = v_new))
+  return(list(v = v_new, iter = cnt))
 }

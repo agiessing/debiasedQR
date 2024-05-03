@@ -11,7 +11,7 @@ Solves primal and dual debiasing program for a given tuning parameter (provided 
 
 \usage{
 drq(Y, X, x, tau, density = "nid", sparsity = NULL, lambda = NULL, gamma = NULL,
-max_iter = 5000, algo="CD")
+screening = TRUE, max_iter = 5000, algo="CD")
 }
 
 \arguments{
@@ -30,6 +30,8 @@ max_iter = 5000, algo="CD")
   \item{lambda}{Regularization parameter for L1-penalized quantile regression problem.
 }
   \item{gamma}{Tuning parameter for primal debiasing program.
+}
+  \item{screening}{If screening = TRUE, then a version of the (iterative) sure independence screening for linear quantile regression is used to select covariates and then estimate the density matrix based on the selected covariates. If screening = FALSE, then the provided value for beta is used to estimate the density matrix.
 }
   \item{max_iter}{
 Maximum number of iterations of the coordinate descent algorithm or alternating direction of multiplier method. Default value is 500.
