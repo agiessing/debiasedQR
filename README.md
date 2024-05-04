@@ -94,8 +94,8 @@ Use cross-validation to determine a suitable value of the tuning parameter $\gam
 # EXAMPLE 2
 # Debiased quantile function，tuning parameter selected via cross-validation
 
-fit2 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
-              max_iter = 1000, parallel = FALSE)
+fit2 <- drqcv(Y, X, x, tau, density = "nid", screening = FALSE, cv_fold = 5, 
+              max_iter = 5000, parallel = FALSE)
 dqr2 <- debiasedPredict(fit2, cv_rule = "1se", robust = FALSE)
 
 dqr2$debias # debiased estimate (based on primal variable w)
@@ -116,8 +116,8 @@ library(doParallel)
 ncpu <- max(1L, detectCores() - 2L, na.rm = TRUE)
 cl <- makeCluster(ncpu)
 registerDoParallel(cl)
-fit3 <- drqcv(Y, X, x, tau, density = "nid", sparsity = 6, cv_fold = 5,
-              max_iter = 1000, parallel = TRUE)
+fit3 <- drqcv(Y, X, x, tau, density = "nid", screening = FALSE, cv_fold = 5, 
+              max_iter = 5000, parallel = TRUE)
 stopCluster(cl)
 dqr3 <- debiasedPredict(fit3, cv_rule = "1se", robust = FALSE)
 
